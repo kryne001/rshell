@@ -37,24 +37,29 @@ int main() {
 		istringstream commandStream(commandLine);
 		string commandName;
 		
-		char** commands = (char**)malloc(commandLine.size());
+		char** commands = (char**)malloc(commandLine.size() + 8);
 
+		string tD = "/bin/";
+		int size = 0;
 		for (int i = 0; commandStream >> commandName; ++i) {
-			commands[i] = (char*)malloc(commandName.size());
-			commands[i] = (char*)commandName.c_str();
+			if (i == 0) {
+				tD.append(commandName);
+				commands[i] = (char*)malloc(tD.size() + 8);
+				commands[i] = (char*)tD.c_str();
+			}
+			else {	
+				commands[i] = (char*)malloc(commandLine.size() + 8);
+				commands[i] = (char*)commandName.c_str();
+			}
+			++size;
 		}
-		
 		if (commands[0] == "exit") 
 			exit(1);
-
-		char* targetDirectory = (char*)malloc(commandLine.size());
-		targetDirectory = "/usr/bin";	
-		//strncat (targetDirectory, commands[0], 20);
 
 		int pid = fork();
 		if (pid == 0) {
 
-			if (-1 == (execv(targetDirectory, commands))) {
+			if (-1 == (execv(commands[0], commands))) {
 				perror("execv failed");
 				exit(1);
 			}
@@ -63,7 +68,7 @@ int main() {
 		else if (pid > 0 && !isAmp) {
 			wait(0);
 		}
-		for (int i = 0; i < commandLine.size(); ++i) {
+		for (int i = 0; i < size; ++i) {
 			free(commands[i]);
 		}
 		free(commands);
