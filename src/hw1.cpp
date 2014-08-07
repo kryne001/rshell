@@ -13,7 +13,7 @@ int main() {
 		loginName = getlogin();
 		char* getHost = new char[100];
 		gethostname(getHost, 100);
-		int getHostReturn = gethostname(getHost, 100);
+		gethostname(getHost, 100);
 		cout << loginName << "@" << getHost << "$ ";
 		getline(cin, commandLine);
 		
