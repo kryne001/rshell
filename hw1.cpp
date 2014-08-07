@@ -47,13 +47,14 @@ int main() {
 		if (commands[0] == "exit") 
 			exit(1);
 
-		char* directory = "/usr/bin/";
-		strncat (directory, commands[0], 20);
+		char* targetDirectory = (char*)malloc(commandLine.size());
+		targetDirectory = "/usr/bin";	
+		//strncat (targetDirectory, commands[0], 20);
 
 		int pid = fork();
 		if (pid == 0) {
 
-			if (-1 == (execv(directory, (char *const*)commands))) {
+			if (-1 == (execv(targetDirectory, commands))) {
 				perror("execv failed");
 				exit(1);
 			}
@@ -62,5 +63,9 @@ int main() {
 		else if (pid > 0 && !isAmp) {
 			wait(0);
 		}
+		for (int i = 0; i < commandLine.size(); ++i) {
+			free(commands[i]);
+		}
+		free(commands);
 	}	
 }
