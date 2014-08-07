@@ -1,0 +1,58 @@
+Script started on Thu Aug  7 13:28:35 2014
+[?1034hbash-3.2$ ls
+exec.script
+bash-3.2$ cd ..
+bash-3.2$ ls
+LICENSE		README.md	a.out		a.out.dSYM	src		tests
+bash-3.2$ cd src
+bash-3.2$ ls
+hw1.cpp
+bash-3.2$ g++ -g --debug hw1.cpp
+lbash-3.2$ l[Kls
+a.out		a.out.dSYM	hw1.cpp
+bash-3.2$ echo "test case 1: basic L[Kls command"
+test case 1: basic ls command
+bash-3.2$ ./a.out
+evelynlocayon@ucrwpa3-1-210-81.bulk.ucr.edu$ ls
+a.out		a.out.dSYM	hw1.cpp
+a.out(3840,0x7fff77e33310) malloc: *** error for object 0x7fff50767400: pointer being freed was not allocated
+*** set a breakpoint in malloc_error_break to debug
+Abort trap: 6
+bash-3.2$ echo "bug is: now [K[Kt able to free memory, but still prints directory's [K[K[K comn[K[Kntesn[K[Knts
+> "
+bug is: not able to free memory, but still prints directory contents
+
+bash-3.2$ echo "test case 2: flags"
+test case 2: flags
+bash-3.2$ echo "test case 2: flags"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbug is: not able to free memory, but still prints directory contents
+"[A[C[C[C[C[C[C[C[C[C./a.out[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+evelynlocayon@ucrwpa3-1-210-81.bulk.ucr.edu$ ls -a -l
+total 112
+-rwxr-xr-x  1 evelynlocayon  staff  49756 Aug  7 13:29 a.out
+drwxr-xr-x  3 evelynlocayon  staff    102 Aug  7 13:29 a.out.dSYM
+-rw-r--r--  1 evelynlocayon  staff   1791 Aug  7 12:55 hw1.cpp
+a.out(3846,0x7fff77e33310) malloc: *** error for object 0x7fcbb0d00008: pointer being freed was not allocated
+*** set a breakpoint in malloc_error_break to debug
+Abort trap: 6
+bash-3.2$ echo "test case 3: & [K"
+test case 3: &
+bash-3.2$ echo "test case 3: &"[C[C[C[C[C[C[C[C[C[C[14P./a.out
+evelynlocayon@ucrwpa3-1-210-81.bulk.ucr.edu$ ls &
+evelynlocayon@ucrwpa3-1-210-81.bulk.ucr.edu$ a.out		a.out.dSYM	hw1.cpp
+exit
+bash-3.2$ "test case 4: exit"
+bash: test case 4: exit: command not found
+bash-3.2$ echo "test case 4: exit"
+test case 4: exit
+bash-3.2$ echo "test case 4: exit"[C[C[C[C[C[C[C[C[C[C[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12P./a.out
+evelynlocayon@ucrwpa3-1-210-81.bulk.ucr.edu$ exit
+bash-3.2$ test ca[K[K[K[K[K[K[Kecho e[K"test case 4: comments"[K[K[K[K[K[K[K[K[K[K[K[K5'[K: comments"
+test case 5: comments
+bash-3.2$ echo "test case 5: comments"[C[C[C[C[C[C[C[C[C[C./a.out[K
+evelynlocayon@ucrwpa3-1-210-81.bulk.ucr.edu$ ls #-a
+a.out		a.out.dSYM	hw1.cpp
+a.out(3859,0x7fff77e33310) malloc: *** error for object 0x7fff5aa7e400: pointer being freed was not allocated
+*** set a breakpoint in malloc_error_break to debug
+Abort trap: 6
+bash-3.2$ 
