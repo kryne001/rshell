@@ -9,8 +9,11 @@ using namespace std;
 int main() {
 	string commandLine;
 	while (1) {
-		
-		cout << "$ ";
+		char* loginName = (char*)malloc(100);
+		loginName = getlogin();
+		char* getHost = (char*)malloc(100);
+		gethostname(getHost, 100);
+		cout << loginName << "@" << getHost << "$ ";
 		getline(cin, commandLine);
 		
 		bool isComment = false;
@@ -47,13 +50,13 @@ int main() {
 				commands[i] = (char*)malloc(tD.size() + 8);
 				commands[i] = (char*)tD.c_str();
 			}
-			else {	
+			else if (commandName != "&") {	
 				commands[i] = (char*)malloc(commandLine.size() + 8);
 				commands[i] = (char*)commandName.c_str();
 			}
 			++size;
 		}
-		if (commands[0] == "exit") 
+		if (tD == "/bin/exit") 
 			exit(1);
 
 		int pid = fork();
@@ -69,5 +72,7 @@ int main() {
 			wait(0);
 		}
 		free(commands);
+		free(loginName);
+		free(getHost);
 	}	
 }
