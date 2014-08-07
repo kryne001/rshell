@@ -26,35 +26,40 @@ int main() {
 			commandLine.erase(commentIndex, commandLine.size() - commentIndex);
 		}
 
+		bool isAmp = false;
+
+		for (int i = 0; i < commandLine.size(); ++i) {
+			if (commandLine.at(i) == '&') {
+				isAmp = true;
+			}
+		}
+
 		istringstream commandStream(commandLine);
-		char* commandName;
-		vector<char*> commands;
-		int i = 0;
+		string commandName;
 		
-		while (commandStream >> commandName)
-			commands.push_back(commandName);
+		char** commands = (char**)malloc(commandLine.size());
+
+		for (int i = 0; commandStream >> commandName; ++i) {
+			commands[i] = (char*)malloc(commandName.size());
+			commands[i] = (char*)commandName.c_str();
+		}
 		
-		if (commands.at(0) == "exit") 
+		if (commands[0] == "exit") 
 			exit(1);
 
 		char* directory = "/usr/bin/";
-		strncat (directory, commandName, 20);
+		strncat (directory, commands[0], 20);
 
-		char** argc = new char*[commands.size()];
-
-		for (i = 0; i < commands.size(); ++i) {
-			argc[i] = commands.at(i);
-		}	
 		int pid = fork();
 		if (pid == 0) {
 
-			if (-1 == (execv(directory, (char *const*)argc))) {
+			if (-1 == (execv(directory, (char *const*)commands))) {
 				perror("execv failed");
 				exit(1);
 			}
 			exit(0);
 		}
-		else if (pid > 0) {
+		else if (pid > 0 && !isAmp) {
 			wait(0);
 		}
 	}	
