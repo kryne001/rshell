@@ -12,7 +12,7 @@ int main() {
 		char* loginName = (char*)malloc(100);
 		loginName = getlogin();
 		char* getHost = (char*)malloc(100);
-		gethostname(getHost, 100);
+		int getHostReturn = gethostname(getHost, 100);
 		cout << loginName << "@" << getHost << "$ ";
 		getline(cin, commandLine);
 		
@@ -40,18 +40,18 @@ int main() {
 		istringstream commandStream(commandLine);
 		string commandName;
 		
-		char** commands = (char**)malloc(commandLine.size() + 8);
+		char** commands = new char*[commandLine.size() + 1];
 
 		string tD = "/bin/";
 		int size = 0;
 		for (int i = 0; commandStream >> commandName; ++i) {
 			if (i == 0) {
 				tD.append(commandName);
-				commands[i] = (char*)malloc(tD.size() + 8);
+				commands[i] = new char[tD.size() + 1];
 				commands[i] = (char*)tD.c_str();
 			}
 			else if (commandName != "&") {	
-				commands[i] = (char*)malloc(commandLine.size() + 8);
+				commands[i] = new char[commandName.size() + 1];
 				commands[i] = (char*)commandName.c_str();
 			}
 			++size;
@@ -71,8 +71,16 @@ int main() {
 		else if (pid > 0 && !isAmp) {
 			wait(0);
 		}
-		free(commands);
-		free(loginName);
-		free(getHost);
+		else if (pid > 0 && isAmp) {
+			continue;
+		}
+		
+		for (int i = 0; i < size; ++i) {
+			delete [] (commands[i]);
+		}
+
+		delete [] commands;
+		delete [] loginName;
+		delete [] getHost;
 	}	
 }
