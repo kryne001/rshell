@@ -11,7 +11,8 @@ int main() {
 	while (1) {
 		char* loginName = (char*)malloc(100);
 		loginName = getlogin();
-		char* getHost = (char*)malloc(100);
+		char* getHost = new char[100];
+		gethostname(getHost, 100);
 		int getHostReturn = gethostname(getHost, 100);
 		cout << loginName << "@" << getHost << "$ ";
 		getline(cin, commandLine);
@@ -40,7 +41,7 @@ int main() {
 		istringstream commandStream(commandLine);
 		string commandName;
 		
-		char** commands = new char*[commandLine.size() + 1];
+		char** commands = (char**)malloc(commandLine.size() + 8);
 
 		string tD = "/bin/";
 		int size = 0;
@@ -76,10 +77,10 @@ int main() {
 		}
 		
 		for (int i = 0; i < size; ++i) {
-			delete [] (commands[i]);
+			delete [] (&commands[i]);
 		}
 
-		delete [] commands;
+		free(&commands);
 		delete [] loginName;
 		delete [] getHost;
 	}	
