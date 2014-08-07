@@ -68,9 +68,6 @@ int main() {
 		else if (pid > 0 && !isAmp) {
 			wait(0);
 		}
-		for (int i = 0; i < size; ++i) {
-			free(commands[i]);
-		}
 		free(commands);
 	}	
 }
