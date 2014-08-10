@@ -11,7 +11,7 @@ int main() {
 	while (1) {
 		char* loginName = (char*)malloc(100);
 		loginName = getlogin();
-		char* getHost = new char[100];
+		char* getHost = new char[100];:
 		gethostname(getHost, 100);
 		gethostname(getHost, 100);
 		cout << loginName << "@" << getHost << "$ ";
