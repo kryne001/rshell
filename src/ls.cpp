@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 	
-	char* host[128];
+	char host[128];
 	gethostname(host, sizeof host);
 	string commandInput;
 
