@@ -33,8 +33,7 @@ int main() {
 	}
 	
 	if (directories.size() > 0) {
-		char* commandLine;
-		commandLine = new char[(commandline.size() + 1) * sizeof char*)];
+		char* commandLine = new char[(commandline.size() + 1) * sizeof char*)];
 		strcpy(commandLine, commandInput);
 
 		char const *dirName = ;
