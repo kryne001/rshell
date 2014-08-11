@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
 	
-	char* host[128];
+	char host[128];
 	gethostname(host, sizeof host);
 	string commandInput;
 
@@ -31,11 +31,12 @@ int main() {
 			directories.push_back(currentCommand);
 		}
 	}
+
+	char* commandLine;
+	commandLine = new char[(commandline.size() + 1) * sizeof char*)];
+	strcpy(commandLine, commandInput);
 	
 	if (directories.size() > 0) {
-		char* commandLine;
-		commandLine = new char[(commandline.size() + 1) * sizeof char*)];
-		strcpy(commandLine, commandInput);
 
 		char const *dirName = ;
 		DIR *dirp;
@@ -50,6 +51,9 @@ int main() {
 	
 		closedir(dirp);
 	}
+
+	delete [] commandLine;
+	
 }
 
 
