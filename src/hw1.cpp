@@ -46,9 +46,11 @@ int main() {
 		int size = 0;
 		for (int i = 0; commandStream >> commandName; ++i) {
 			if (i == 0) {
-				commandName.insert(0, tD);
+				tD.append(commandName);
+				commands[i] = new char[tD.size() + 1];
+				strcpy(commands[i], tD.c_str());
 			}
-			if (commandName != "&") {	
+			else if (commandName != "&") {	
 				commands[i] = new char[commandName.length() + 1];
 				strcpy(commands[i], commandName.c_str());
 			}
