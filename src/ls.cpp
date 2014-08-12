@@ -79,7 +79,10 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		struct stat current;
 
 		while ((direntp = readdir(dirp))) {
-			if (-1 == (stat(direntp, &current))) {
+
+			char* direntpNew = new char[100];
+			strcpy(direntpNew, direntp);
+			if (-1 == (stat(direntpNew, &current))) {
 		
 				perror("stat failed");
 				return -1;
