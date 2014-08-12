@@ -15,7 +15,6 @@ bool isDirectory(char* directoryName) {
 
 	if (-1 == (stat(directoryName, &directoryInCurrent))) {
 
-		perror("stat failed");
 		return false;
 	}
 
@@ -109,7 +108,7 @@ int main(int argc, char* argv[]) {
 			
 			if (isDirectory(argv[i])) {
 				directoryInArgv = true;
-				break;
+				
 			}
 			else {
 			
@@ -148,23 +147,27 @@ int main(int argc, char* argv[]) {
 			for (unsigned int i = 0; i < directories.size(); ++i) {
 				flags.clear();
 				
-				if (argv[directoryIndex.at(i) + 1][0] == '-') {
+				for (int k = directoryIndex.at(i); k < argc && !isDirectory(argv[k]); ++k) {
 				
-					flags.push_back(argv[directoryIndex.at(i) + 1]);
+					if (argv[k][0] == '-') 
+						flags.push_back(argv[k]);
 				}
-				cout << "flags: ";
-				for (unsigned j = 0; j < flags.size(); ++j) {
-				
-					cout << flags.at(j) << " ";
-				}
-				cout << endl;
-				
+			
 				char* directoryName = new char[directories.at(i).size() + 1];
 				strcpy(directoryName, directories.at(i).c_str());
 				
-				if (errno == lsWithFlags(directoryName, flags)) {
+				if (flags.size() == 0) {
 				
-					return errno;
+					if (errno == ls(directoryName)) {
+					
+						return errno;
+					}
+				}
+				else {
+			   	(errno == lsWithFlags(directoryName, flags)) {
+				
+						return errno;
+					}
 				}
 
 				delete [] directoryName;
