@@ -212,7 +212,34 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 
 	}
 
+
 	dirent *direntp;
+
+	if (isR && isDirectory(directoryName)) {
+		vector<char*> dirsInCurdir;
+		int i = 0;
+		while ((direntp = readdir(drip))) {
+			string temp = directoryName;
+			temp.append("/");
+			temp.append(direntp->d_name);
+			char *x;
+			x = new char[temp.size() + 1];
+			strcpy(x, temp);
+			dirsInCurdir.push_back(x);
+			++i;
+		} 
+		
+		for (int j = 0; j < i; ++i) {
+			cout << *dirsInCurdir[j] << ":\n";
+			return lsWithFlags(dirsInCurdir[j], flags);
+			cout << endl;
+		for (int j = 0; j < i; ++j)
+			delete [] dirsinCurdir[j];
+	}
+
+	if (!isL && !isA)
+		return ls(directoryName);
+		
 	if (isL) { //run -l flag
 	
 		struct stat current;
