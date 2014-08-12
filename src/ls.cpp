@@ -209,7 +209,7 @@ int main(int argc, char* argv[]) {
 		
 		vector<string> directories;
 		vector<string> flags;
-		string toInsert = "/";
+		string toInsert = "./";
 		for (int i = 1; i < argc; ++i) {
 			
 			if (argv[i][0] == '-') {
@@ -218,8 +218,12 @@ int main(int argc, char* argv[]) {
 			} else {
 			
 				directories.push_back(argv[i]);
-				directories.at(i).insert(0, toInsert);
 			}
+		}
+
+		for (unsigned i = 0; i < directories.size(); ++i) {
+		
+			directories.at(i).insert(0, toInsert);
 		}
 		if (flags.size() == 0) {
 					
