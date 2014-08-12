@@ -234,7 +234,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			return lsWithFlags(dirsInCurdir[j], flags);
 			cout << endl;
 		for (int j = 0; j < i; ++j)
-			delete [] dirsinCurdir[j];
+			delete [] dirsInCurdir[j];
 	}
 
 	if (!isL && !isA)
