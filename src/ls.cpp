@@ -200,7 +200,10 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			cout << " ";
 
 		}
-		closedir(dirp);
+		if (-1 == (closedir(dirp))) {
+			perror("closedir failed");
+		}
+		cout << endl;
 	}
 	return 0;
 }
