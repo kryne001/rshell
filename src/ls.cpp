@@ -127,6 +127,8 @@ int main(int argc, char* argv[]) {
 			}
 		}
 		else {
+
+			cout << 131 << endl;
 			for (int i = 0; i < argc; ++i) {
 			
 				if (isDirectory(argv[i])) {
@@ -135,7 +137,7 @@ int main(int argc, char* argv[]) {
 				}
 			}	
 
-			
+			cout << "directories size: " << directories.size() << endl;
 			for (unsigned int i = 0; i < directories.size(); ++i) {
 				flags.clear();
 				for (unsigned int k = static_cast<unsigned>(directoryIndex.at(i)); 
