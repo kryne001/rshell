@@ -164,7 +164,7 @@ int main(int argc, char* argv[]) {
 					}
 				}
 				else {
-			   	(errno == lsWithFlags(directoryName, flags)) {
+			   	if	(errno == lsWithFlags(directoryName, flags)) {
 				
 						return errno;
 					}
