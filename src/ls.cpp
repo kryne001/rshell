@@ -136,13 +136,13 @@ int main(int argc, char* argv[]) {
 			}	
 
 
-			cout << "directories: ";
-			for (unsigned i = 0; i < directories.size(); ++i) 
-				cout << directories.at(i) << " ";
-			cout << endl;
+			//cout << "directories: ";
+			//for (unsigned i = 0; i < directories.size(); ++i) 
+				//cout << directories.at(i) << " ";
+			//cout << endl;
 
 			for (unsigned int i = 0; i < directories.size(); ++i) {
-				cout << 145 << endl;
+				//cout << 145 << endl;
 				flags.clear();
 				
 				for (int k = directoryIndex.at(i) + 1; k < argc && !isDirectory(argv[k]); ++k) {
@@ -155,8 +155,8 @@ int main(int argc, char* argv[]) {
 				
 
 				if (flags.size() == 0) {
-					cout << 152 << endl;
-					cout << directories.at(i) << ":" << endl;				
+					//cout << 152 << endl;
+					//cout << directories.at(i) << ":" << endl;				
 					ls(directoryName);
 				}
 				else {
