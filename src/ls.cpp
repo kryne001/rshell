@@ -23,7 +23,7 @@ int main(int argc, char** argv[]) {
 			if (direntp->d_name[0] != '.') {
 					
 				cout << direntp->d_name << endl; // use stat here to find attributes of a file
-				printf(direntp->d_name[0], 8);
+				printf(direntp->d_name, 8);
 			}
 		}
 		closedir(dirp);
