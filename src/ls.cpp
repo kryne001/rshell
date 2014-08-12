@@ -88,7 +88,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			curdir.append(directoryName);
 			curdir.append("/");
 			char *toCur = new char[curdir.size() + 1];
-			strcpy(toCur, curdir);
+			strcpy(toCur, curdir.c_str());
 			if (-1 == (stat(toCur, &current))) {
 		
 				perror("stat failed");
