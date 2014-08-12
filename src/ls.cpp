@@ -210,7 +210,6 @@ int main(int argc, char* argv[]) {
 		
 		vector<string> directories;
 		vector<string> flags;
-		bool directoryInArgv = false;
 		for (int i = 1; i < argc; ++i) {
 			
 			if (isDirectory(argv[i])) {
@@ -257,7 +256,7 @@ int main(int argc, char* argv[]) {
 					char* directoryName = new char[directories.at(i).size() + 1];
 					strcpy(directoryName, directories.at(i).c_str());
 			
-					lsWithFlags(directoryName, falgs);	
+					lsWithFlags(directoryName, flags);	
 					delete [] directoryName;
 				}
 			}
