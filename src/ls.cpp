@@ -247,15 +247,15 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		struct passwd *x;
 		struct group *y;
 		while ((direntp = readdir(dirp))) {
-			
+			string temp = directoryName;
+			temp.append("/");
+			temp.append(direntp->d_name);
 			//cout << "direntp: " << direntp->d_name << endl;
-			char curdir[1000];
-			strcpy(curdir, directoryName);
-			strcat(curdir, "/");
-			strcat(curdir, direntp->d_name);
+			char* curdir[temp.size() + 1];
+			strcpy(curdir, temp);
 			
 			//cout << curdir << endl;
-			if (-1 == (stat(/*toCur*/curdir, &current))) {
+			if (-1 == (stat(curdir, &current))) {
 		
 				perror("stat failed");
 				return -1;
