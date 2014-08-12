@@ -141,7 +141,7 @@ int main(int argc, char* argv[]) {
 				flags.clear();
 				for (unsigned int k = static_cast<unsigned>(directoryIndex.at(i)); 
 					 (i + 1) < directoryIndex.size() && 
-					 k != directoryIndex.at(i + 1);
+					 k != (unsigned)directoryIndex.at(i + 1);
 					  ++k) {
 					if (argv[k][0] == '-') {
 					
