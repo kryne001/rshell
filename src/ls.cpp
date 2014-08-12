@@ -251,7 +251,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			temp.append("/");
 			temp.append(direntp->d_name);
 			//cout << "direntp: " << direntp->d_name << endl;
-			char* curdir[temp.size() + 1];
+			char* curdir = new char[temp.size() + 1];
 			strcpy(curdir, temp);
 			
 			//cout << curdir << endl;
