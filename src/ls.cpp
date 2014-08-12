@@ -150,7 +150,7 @@ int main(int argc, char* argv[]) {
 				
 				if (argv[directoryIndex.at(i) + 1][0] == '-') {
 				
-					flags.push_back(argv[directoryIndex.at(i) + 1][0]);
+					flags.push_back(argv[directoryIndex.at(i) + 1]);
 				}
 				cout << "flags: ";
 				for (unsigned j = 0; j < flags.size(); ++j) {
