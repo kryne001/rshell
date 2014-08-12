@@ -68,11 +68,6 @@ void printDashL(char* directoryName, vector<string> flags) {
 			}
 
 		}	
-			if (directoryName[0] == '.' && !isA) // if there's no -a flag, don't print files 
-															   // starting with .
-				continue; 
-			else {
-			
 				if (current.st_mode & S_IFDIR) 
 					cout << "d";
 				
