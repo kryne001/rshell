@@ -179,7 +179,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				
 				cout << " " << direntp->d_name;
 				if (isR)
-					lsWithFlags(toCur, flags);	
+					lsWithFlags(curdir, flags);	
 				delete [] toCur;
 			}
 			cout << endl;
