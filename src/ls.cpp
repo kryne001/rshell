@@ -75,7 +75,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 	dirent *direntp;
 	if (isL) {
 	
-
+		cout << 78 << endl;
 		struct stat current;
 
 		while ((direntp = readdir(dirp))) {
