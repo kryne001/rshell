@@ -224,7 +224,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			temp.append(direntp->d_name);
 			char *x;
 			x = new char[temp.size() + 1];
-			strcpy(x, temp);
+			strcpy(x, temp.c_str());
 			dirsInCurdir.push_back(x);
 			++i;
 		} 
