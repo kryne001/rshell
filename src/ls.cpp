@@ -143,6 +143,20 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 					cout << "x";
 				else
 					cout << "-";
+
+				cout << " ";
+
+				cout << current.st_nlink << " ";
+
+				cout << current.st_uid << " ";
+
+				cout << current.st_gid << " ";
+
+				cout << current.st_size << " ";
+				
+				cout << current.st_mtime << " ";
+
+				cout << current.st_dev << " ";
 				
 			}
 			cout << endl;
