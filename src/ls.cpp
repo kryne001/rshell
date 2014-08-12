@@ -130,7 +130,7 @@ int main(int argc, char* argv[]) {
 		
 			for (int i = 0; i < argc; ++i) {
 			
-				if (isDirectory(argv[i]) {
+				if (isDirectory(argv[i])) {
 					directories.push_back(argv[i]);
 					directoryIndex.push_back(i);
 				}
