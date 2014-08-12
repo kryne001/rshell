@@ -27,14 +27,13 @@ bool isDirectory(char* directoryName) {
 	}
 }
 
-void ls(char* directoryName) {
+int ls(char* directoryName) {
 
 	
 		char const *dirName = ".";
 		DIR *dirp;
 		if (!(dirp = opendir(dirName))) {
-		cerr << "Error(" << errno << ") opening " << dirName << endl;
-			return errno;
+			cerr << "Error(" << errno << ") opening " << dirName << endl;
 		}
 
 		dirent *direntp;
@@ -88,12 +87,13 @@ int main(int argc, char* argv[]) {
 	
 	if (argc == 1) {
 		
-		if (!ls(".")) {
-			exit(1);
+		if (errno == ls(".")) {
+		
+			return errno;
 		}
 	}	
 	
-	else {
+	/*else {
 		
 		vector<string> directories;
 		vector<string> flags;
@@ -107,7 +107,7 @@ int main(int argc, char* argv[]) {
 				if (isDirectory(	
 			}*/
 		}
-	}
+	}*/
 	
 
 
