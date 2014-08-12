@@ -148,7 +148,7 @@ int main(int argc, char* argv[]) {
 				
 				char* directoryName = new char[directories.at(i).size() + 1];
 				strcpy(directoryName, directories.at(i).c_str());
-				if (errno == directoryName, flags)) {
+				if (errno == lsWithFlags(directoryName, flags)) {
 				
 					return errno;
 				}
