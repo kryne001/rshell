@@ -86,7 +86,6 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			
 			//cout << "direntp: " << direntp->d_name << endl;
 			char curdir[1000];
-			strcpy(curdir, "./");
 			strcat(curdir, directoryName);
 			strcat(curdir, "/");
 			strcat(curdir, direntp->d_name);
