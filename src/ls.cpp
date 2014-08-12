@@ -147,7 +147,7 @@ int main(int argc, char* argv[]) {
 			for (unsigned int i = 0; i < directories.size(); ++i) {
 				flags.clear();
 				
-				for (int k = directoryIndex.at(i); k < argc && !isDirectory(argv[k]); ++k) {
+				for (int k = directoryIndex.at(i + 1); k < argc && !isDirectory(argv[k]); ++k) {
 					cout << "k: " << k << endl;
 					if (argv[k][0] == '-') 
 						flags.push_back(argv[k]);
