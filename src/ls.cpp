@@ -142,6 +142,7 @@ int main(int argc, char* argv[]) {
 			cout << endl;
 
 			for (unsigned int i = 0; i < directories.size(); ++i) {
+				cout << 145 << endl;
 				flags.clear();
 				
 				for (int k = directoryIndex.at(i) + 1; k < argc && !isDirectory(argv[k]); ++k) {
