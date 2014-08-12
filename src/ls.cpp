@@ -222,12 +222,9 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		vector<char*> dirsInCurdir;
 		int i = 0;
 		while ((direntp = readdir(dirp))) {
-			if ((0 == strcmp(direntp->d_name, ".")) || (0 == strcmp(direntp->d_name, "..")))
-				continue;
 			string foo = directoryName;			
-			if (foo == ".") {
-				//enter here
-			}
+			if (foo == "." || foo == "..")
+				continue;
 			foo.append("/");
 			foo.append(direntp->d_name);
 			char *x;
