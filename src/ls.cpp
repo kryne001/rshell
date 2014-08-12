@@ -83,7 +83,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		struct group *y;
 		while ((direntp = readdir(dirp))) {
 			
-			cout << "direntp: " << direntp << endl;
+			cout << "direntp: " << *direntp << endl;
 			if (-1 == (stat(direntp->d_name, &current))) {
 		
 				perror("stat failed");
