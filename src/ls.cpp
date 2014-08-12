@@ -178,6 +178,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				printf("%s",buff);
 				
 				cout << " " << direntp->d_name;
+				delete [] toCur;
 			}
 			cout << endl;
 				
