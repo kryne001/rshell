@@ -149,9 +149,9 @@ int main(int argc, char* argv[]) {
 				}
 
 				cout << "flags: ";
-				for (unsigned i = 0; i < flags.size(); ++i) {
+				for (unsigned j = 0; j < flags.size(); ++j) {
 				
-					cout << flags.at(i) << " ";
+					cout << flags.at(j) << " ";
 				}
 				cout << endl;
 				
