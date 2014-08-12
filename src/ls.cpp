@@ -157,10 +157,7 @@ int main(int argc, char* argv[]) {
 				if (flags.size() == 0) {
 					cout << 152 << endl;
 					cout << directories.at(i) << ":" << endl;				
-					if (errno == ls(directoryName)) {
-						cout << 161 << endl;					
-						return errno;
-					}
+					ls(directoryName);
 				}
 				else {
 					cout << directories.at(i) << ":" << endl;				
