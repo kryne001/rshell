@@ -83,8 +83,13 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		struct group *y;
 		while ((direntp = readdir(dirp))) {
 			
-			cout << "direntp: " << direntp->d_name << endl;
-			if (-1 == (stat(direntp->d_name, &current))) {
+			//cout << "direntp: " << direntp->d_name << endl;
+			string curdir = "./";
+			curdir.append(directoryName);
+			curdir.append("/");
+			char *toCur = new char[curdir.size() + 1];
+			strcpy(toCur, curdir);
+			if (-1 == (stat(toCur, &current))) {
 		
 				perror("stat failed");
 				return -1;
