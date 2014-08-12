@@ -51,7 +51,132 @@ int ls(char* directoryName) {
 		return 0;
 }
 
+void printDashL(char* directoryName, vector<string> flags) {
+
+	
+		bool isA = false;
+		bool isL = false;
+		bool isR = false;
+		for (unsigned i = 0; i < flags.size(); ++i) {
+			for (unsigned k = 0; k < flags.at(i).size(); ++k) {
+				if (flags.at(i).at(k) == 'a') 
+					isA = true; // there's an -a flag
+				else if (flags.at(i).at(k) == 'l') 
+					isL = true; // there's an -l flag
+				else if (flags.at(i).at(k) == 'R')
+					isR = true; // there's an -R flag
+			}
+
+		}	
+			if (directoryName[0] == '.' && !isA) // if there's no -a flag, don't print files 
+															   // starting with .
+				continue; 
+			else {
+			
+				if (current.st_mode & S_IFDIR) 
+					cout << "d";
+				
+				if (current.st_mode & S_IFLNK)
+					cout << "l";
+				
+				if (!(current.st_mode & S_IFDIR) && !(current.st_mode & S_IFLNK))
+					cout << "-";
+
+				if (current.st_mode & S_IRUSR)
+					cout << "r";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IWUSR)
+					cout << "w";
+				else
+					cout << "-";
+				
+				if (current.st_mode & S_IXUSR)
+					cout << "x";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IRGRP)
+					cout << "r";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IWGRP)
+					cout << "w";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IXGRP)
+					cout << "x";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IROTH)
+					cout << "r";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IWOTH)
+					cout << "w";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IXOTH)
+					cout << "x";
+				else
+					cout << "-";
+
+				cout << " ";
+
+				cout << current.st_nlink << " ";
+
+				if ((x = getpwuid(current.st_uid)) != NULL) 
+					cout << x->pw_name << " ";
+				else {
+					cerr << "error: " << errno << endl;
+					exit(0);
+				}
+
+				if ((y = getgrgid(current.st_gid)) != NULL)
+					cout << y->gr_name << " ";
+				else {
+					cerr << "error: " << errno << endl;
+					exit(0);	
+				}
+				cout << current.st_size << " ";
+				
+				char buff[20];
+				struct tm * timeinfo;
+				timeinfo = localtime(&(current.st_mtime));
+				strftime(buff, 20, "%b %d %H:%M", timeinfo);
+				printf("%s",buff);
+				
+				cout << " " << direntp->d_name;
+}
 int lsWithFlags(char* directoryName, vector<string> flags) {
+	if (!isDirectory(directoryName)) {
+	
+		bool isA = false;
+		bool isL = false;
+		bool isR = false;
+		for (unsigned i = 0; i < flags.size(); ++i) {
+			for (unsigned k = 0; k < flags.at(i).size(); ++k) {
+				if (flags.at(i).at(k) == 'a') 
+					isA = true; // there's an -a flag
+				else if (flags.at(i).at(k) == 'l') 
+					isL = true; // there's an -l flag
+				else if (flags.at(i).at(k) == 'R')
+					isR = true; // there's an -R flag
+			}
+
+		}	
+		if (isL) {
+			printDashL(directoryName, vector<string> flags);	
+		}
+		
+	}
+
 
 	char const *dirName = directoryName;
 	DIR *dirp;
@@ -209,6 +334,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 }
 
 int main(int argc, char* argv[]) {
+	cout << ENOTDIR << endl;
 	
 	if (argc == 1) {
 		
