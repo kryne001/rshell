@@ -22,8 +22,9 @@ int main(int argc, char** argv[]) {
 		while ((direntp = readdir(dirp))) {
 			if (direntp->d_name[0] != '.') {
 					
-				cout << direntp->d_name << endl; // use stat here to find attributes of a file
+				//cout << direntp->d_name << endl; // use stat here to find attributes of a file
 				printf(direntp->d_name, 8);
+				cout << endl;
 			}
 		}
 		closedir(dirp);
