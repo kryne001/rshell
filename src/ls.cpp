@@ -145,8 +145,9 @@ int main(int argc, char* argv[]) {
 						flags.push_back(argv[k]);
 					}
 				}
-
-				if (errno == lsWithFlags(directories.at(i).c_str(), flags)) {
+				
+				char directoryName[directories.size() + 1];
+				if (errno == lsWithFlags(&directoryName, flags)) {
 				
 					return errno;
 				}
