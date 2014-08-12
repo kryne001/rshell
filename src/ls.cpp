@@ -59,11 +59,11 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 	for (unsigned i = 0; i < flags.size(); ++i) {
 		for (unsigned k = 0; k < flags.at(i).size(); ++k) {
 			if (flags.at(i).at(k) == 'a') 
-				isA = true;
+				isA = true; // there's an -a flag
 			else if (flags.at(i).at(k) == 'l') 
-				isL = true;
+				isL = true; // there's an -l flag
 			else if (flags.at(i).at(k) == 'R')
-				isR = true;
+				isR = true; // there's an -R flag
 		}
 
 	}
@@ -75,7 +75,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 	}
 
 	dirent *direntp;
-	if (isL) {
+	if (isL) { //run -l flag
 	
 		struct stat current;
 
@@ -84,18 +84,18 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		while ((direntp = readdir(dirp))) {
 			
 			//cout << "direntp: " << direntp->d_name << endl;
-			string curdir = "./";
-			curdir.append(directoryName);
-			curdir.append("/");
-			char *toCur = new char[curdir.size() + 1];
-			strcpy(toCur, curdir.c_str());
-			if (-1 == (stat(toCur, &current))) {
+			char curdir[1000];
+			strcpy(curdir, "./");
+			strcat(curdir, directoryName);
+			strcat(curdir, "/");
+			if (-1 == (stat(/*toCur*/curdir, &current))) {
 		
 				perror("stat failed");
 				return -1;
 			}
-			if (direntp->d_name[0] == '.' && !isA)
-				continue;	
+			if (direntp->d_name[0] == '.' && !isA) // if there's no -a flag, don't print files 
+															   // starting with .
+				continue; 
 			else {
 			
 				if (current.st_mode & S_IFDIR) 
@@ -178,6 +178,8 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				printf("%s",buff);
 				
 				cout << " " << direntp->d_name;
+				if (isR)
+					lsWithFlags(toCur, flags);	
 				delete [] toCur;
 			}
 			cout << endl;
