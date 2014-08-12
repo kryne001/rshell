@@ -105,7 +105,7 @@ int main(int argc, char* argv[]) {
 		for (int i = 1; i < argc; ++i) {
 			
 			if (argv[i][0] == '-') {
-				flags.push_back(argv[i][0]);
+				flags.push_back(argv[i]);
 			}
 			else {
 
