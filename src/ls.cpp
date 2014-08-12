@@ -117,7 +117,7 @@ int main(int argc, char* argv[]) {
 		}
 		if (directories.size() == 0) {
 					
-			if (errno == lsWithFlags(".", flags) {
+			if (errno == lsWithFlags(".", flags)) {
 			
 				return errno;
 			}
