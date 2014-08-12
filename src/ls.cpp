@@ -80,9 +80,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 
 		while ((direntp = readdir(dirp))) {
 
-			char* direntpNew = new char[100];
-			strcpy(direntpNew, current);
-			if (-1 == (stat(direntpNew, &current))) {
+			if (-1 == (stat((char*)direntp, &current))) {
 		
 				perror("stat failed");
 				return -1;
@@ -99,7 +97,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 					cout << "-";
 
 				if (current.st_mode & S_IRUSR)
-					cout << "r"
+					cout << "r";
 				else
 					cout << "-";
 
