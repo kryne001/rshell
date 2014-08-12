@@ -129,7 +129,7 @@ int main(int argc, char* argv[]) {
 		else {
 
 			cout << 131 << endl;
-			for (int i = 0; i < argc; ++i) {
+			for (int i = 1; i < argc; ++i) {
 			
 				if (isDirectory(argv[i])) {
 					directories.push_back(argv[i]);
