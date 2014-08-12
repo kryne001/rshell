@@ -229,7 +229,7 @@ int main(int argc, char* argv[]) {
 				char* directoryName = new char[directories.at(i).size() + 1];
 				strcpy(directoryName, directories.at(i).c_str());
 				
-				ls(directoryName, flags);
+				ls(directoryName);
 				
 				delete [] directoryName;
 			}
