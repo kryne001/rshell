@@ -233,6 +233,10 @@ int main(int argc, char* argv[]) {
 				delete [] directoryName;
 			}
 		}
+		else if (directories.size() == 0) {
+		
+			lsWithFlags(".", flags);
+		}
 		else {
 			//cout << "directories: ";
 			//for (unsigned i = 0; i < directories.size(); ++i) 
