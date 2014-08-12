@@ -54,7 +54,7 @@ int ls(char* directoryName) {
 		}
 		cout << endl;
 		if (-1 == closedir(dirp)) {
-			perror("close directory failed);
+			perror("close directory failed");
 			exit(1);
 		}
 		return 0;
