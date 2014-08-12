@@ -47,6 +47,7 @@ int ls(char* directoryName) {
 		}
 		cout << endl;
 		closedir(dirp);
+		return 0;
 }
 bool lsWithFlags(char* directoryName, vector<string> flags) {
 
