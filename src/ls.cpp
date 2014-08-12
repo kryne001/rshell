@@ -1,4 +1,5 @@
 #include <pwd.h>
+#include <grp.h>
 #include <iostream>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -163,7 +164,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				else {
 					cerr << "error: " << errno << endl;
 					exit(0);	
-
+				}
 				cout << current.st_size << " ";
 				
 				char buff[20];
