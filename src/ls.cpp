@@ -1,3 +1,4 @@
+#include <pwd.h>
 #include <iostream>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -160,6 +161,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				strftime(buff, 20, "%b %d %H:%M", timeinfo);
 				printf("%s",buff);
 				
+				cout << directp->d_name;
 			}
 			cout << endl;
 				
