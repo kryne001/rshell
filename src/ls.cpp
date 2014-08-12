@@ -53,7 +53,10 @@ int ls(char* directoryName) {
 			}
 		}
 		cout << endl;
-		closedir(dirp);
+		if (-1 == closedir(dirp)) {
+			perror("close directory failed);
+			exit(1);
+		}
 		return 0;
 }
 
@@ -221,12 +224,12 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		while ((direntp = readdir(dirp))) {
 			if ((0 == strcmp(direntp->d_name, ".")) || (0 == strcmp(direntp->d_name, "..")))
 				continue;
-			string temp = directoryName;
-			temp.append("/");
-			temp.append(direntp->d_name);
+			string foo = directoryName;			
+			foo.append("/");
+			foo.append(direntp->d_name);
 			char *x;
-			x = new char[temp.size() + 1];
-			strcpy(x, temp.c_str());
+			x = new char[foo.size() + 1];
+			strcpy(x, foo.c_str());
 			dirsInCurdir.push_back(x);
 			++i;
 		} 
