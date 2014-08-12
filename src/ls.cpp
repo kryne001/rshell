@@ -158,9 +158,8 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			cout << " ";
 
 		}
+		closedir(dirp);
 	}
-	cout << endl;
-	closedir(dirp);
 	return 0;
 }
 
