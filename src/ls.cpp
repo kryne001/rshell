@@ -57,11 +57,11 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 	bool isR = false;
 	for (unsigned i = 0; i < flags.size(); ++i) {
 	
-		if (flags.at(i) == "a") 
+		if (flags.at(i).at(1) == "a") 
 			isA = true;
-		else if (flags.at(i) == "l") 
+		else if (flags.at(1) == "l") 
 			isL = true;
-		else if (flags.at(i) == "R")
+		else if (flags.at(1) == "R")
 			isR = true;
 
 	}
