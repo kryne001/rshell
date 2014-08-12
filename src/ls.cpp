@@ -154,9 +154,11 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 
 				cout << current.st_size << " ";
 				
-				cout << current.st_mtime << " ";
-
-				cout << current.st_dev << " ";
+				char buff[20];
+				struct tm * timeinfo;
+				time info = localtime(&(current.st_mtime));
+				strftime(buff, 20, "%b %d %H:%M", timeinfo);
+				printf("%s",buff);
 				
 			}
 			cout << endl;
