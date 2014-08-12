@@ -156,7 +156,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				
 				char buff[20];
 				struct tm * timeinfo;
-				time info = localtime(&(current.st_mtime));
+				timeinfo = localtime(&(current.st_mtime));
 				strftime(buff, 20, "%b %d %H:%M", timeinfo);
 				printf("%s",buff);
 				
