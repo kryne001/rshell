@@ -103,17 +103,17 @@ int main(int argc, char* argv[]) {
 		
 		vector<string> directories;
 		vector<string> flags;
+		vector<int> directoryIndex;
+		bool directoryInArgv = false;
 		for (int i = 1; i < argc; ++i) {
 			
-			if (argv[i][0] == '-') {
-				flags.push_back(argv[i]);
+			if (isDirectory(argv[i]) {
+				directoryInArgv = true;
+				break;
 			}
 			else {
-
-				if (isDirectory(argv[i])) {
-				
-					directories.push_back(argv[i]);
-				}	
+			
+				if (argv[i]	
 			}
 		}
 		if (directories.size() == 0) {
@@ -123,10 +123,34 @@ int main(int argc, char* argv[]) {
 				return errno;
 			}
 		}
+		else {
+		
+			for (int i = 0; i < argc; ++i) {
+			
+				if (isDirectory(argv[i]) {
+					directories.push_back(argv[i]);
+					directoryIndex.push_back(i);
+				}
+			}	
+
+			for (int i = 0; i < directories.size(); ++i) {
+				flags.clear();
+				for (int k = directoryIndex.at(i); (i + 1) < directoryIndex.size() && 
+							k != directoryIndex.at(i + 1); ++k) {
+					if (argv[k][0] == '-') {
+					
+						flags.push_back(argv[k]);
+					}
+				}
+
+				if (errno == lsWithFlags(directories.at(i), flags) {
+				
+					return errno;
+				}
+			}
+		}
 	}
 	
 
-
 }
-
 
