@@ -210,80 +210,51 @@ int main(int argc, char* argv[]) {
 		
 		vector<string> directories;
 		vector<string> flags;
-		vector<int> directoryIndex;
 		bool directoryInArgv = false;
 		for (int i = 1; i < argc; ++i) {
 			
 			if (isDirectory(argv[i])) {
-				directoryInArgv = true;
+				directories.push_back(argv[i]);
 				
 			}
-			else {
-			
-				if (argv[i][0] == '-') {
+			else if (argv[i][0] == '-') {
 				
-					flags.push_back(argv[i]);
-				}	
+				flags.push_back(argv[i]);
 			}
 		}
-		if (!directoryInArgv) {
+		if (flags.size() == 0) {
 					
-			if (errno == lsWithFlags(".", flags)) {
+			for (unsigned i = 0; i < directories.size(); ++i) {
 			
-				return errno;
+				ls(directories.at(i));
 			}
 		}
 		else {
-
-			for (int i = 1; i < argc; ++i) {
-			
-				if (isDirectory(argv[i])) {
-					directories.push_back(argv[i]);
-					directoryIndex.push_back(i);
-				}
-			}	
-
-
 			//cout << "directories: ";
 			//for (unsigned i = 0; i < directories.size(); ++i) 
 				//cout << directories.at(i) << " ";
 			//cout << endl;
 
-			for (unsigned int i = 0; i < directories.size(); ++i) {
-				//cout << 145 << endl;
-				flags.clear();
+			if (directories.size() == 1) {
 				
-				for (int k = directoryIndex.at(i) + 1; k < argc && !isDirectory(argv[k]); ++k) {
-					if (argv[k][0] == '-') 
-						flags.push_back(argv[k]);
-				}
-			
-				char* directoryName = new char[directories.at(i).size() + 1];
-				strcpy(directoryName, directories.at(i).c_str());
+				char* directoryName = new char[directories.at(0).size() + 1];
+				strcpy(directoryName, directories.at(0).c_str());
 				
-
-				if (flags.size() == 0 && directories.size() == 1) {
-					//cout << 152 << endl;
-					//cout << directories.at(i) << ":" << endl;				
-					ls(directoryName);
-					cout << endl;
-				}
-				else if (flags.size() == 0) { 
-					//cout << 152 << endl;
-					cout << directories.at(i) << ":" << endl;				
-					ls(directoryName);
-					cout << endl;
-				}
-				else {
-					cout << directories.at(i) << ":" << endl;				
-			   	if	(errno == lsWithFlags(directoryName, flags)) {
+				lsWithFlags(directoryName, flags);
 				
-						return errno;
-					}
-					cout << endl;
-				}
-
 				delete [] directoryName;
+			}
+
+			else {
+				for (unsigned int i = 0; i < directories.size(); ++i) {
+					//cout << 145 << endl;
+				
+					char* directoryName = new char[directories.at(i).size() + 1];
+					strcpy(directoryName, directories.at(i).c_str());
+			
+					lsWithFlags(directoryName, falgs);	
+					delete [] directoryName;
+				}
 			}
 		}
 	}
