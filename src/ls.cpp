@@ -232,7 +232,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		} 
 		
 		for (int j = 0; j < i; ++i) {
-			cout << *dirsInCurdir[j] << ":\n";
+			cout << *dirsInCurdir[j] << ":\n\t";
 			return lsWithFlags(dirsInCurdir[j], flags);
 			cout << endl;
 		}
