@@ -16,15 +16,20 @@ bool isDirectory(char* directoryName) {
 	if (-1 == (errorCheck = stat(directoryName, directoryInCurrent))) {
 
 		perror("stat failed");
-		exit(0);
+		return false;
+	}
+
+	if (directoryInCurrent.st_mode & S_IFDIR) {
+		return true;
+	}
+	else {
+		return false;
 	}
 }
 
+bool ls(char* directoryName) {
 
-int main(int argc, char** argv[]) {
 	
-	if (argc == 1) {
-		
 		char const *dirName = ".";
 		DIR *dirp;
 		if (!(dirp = opendir(dirName))) {
@@ -43,6 +48,49 @@ int main(int argc, char** argv[]) {
 		}
 		cout << endl;
 		closedir(dirp);
+}
+bool lsWithFlags(char* directoryName, vector<string> flags) {
+
+	bool isA = false;
+	bool isL = false;
+	bool isR = false;
+	for (unsigned i = 0; i < flags.size(); ++i) {
+	
+		if (flags.at(i) == "a") 
+			isA = true;
+		else if (flags.at(i) == "l") 
+			isL = true;
+		else if (flags.at(i) == "R")
+			isR = true;
+
+	}
+	char const *dirName = directoryName;
+	DIR *dirp;
+	if (!(dirp = opendir(dirName))) {
+		cerr << "Error(" << errno << ") opening " << dirName << endl;
+		return errno;
+	}
+
+	dirent *direntp;
+	while ((direntp = readdir(dirp))) {
+		if (direntp->d_name[0] != '.') {
+					
+			//cout << direntp->d_name << endl; // use stat here to find attributes of a file
+			printf(direntp->d_name, 8);
+			cout << " ";
+		}
+	}
+	cout << endl;
+	closedir(dirp);
+}
+
+int main(int argc, char** argv[]) {
+	
+	if (argc == 1) {
+		
+		if (!ls(".")) {
+			exit(1);
+		}
 	}	
 	
 	else {
@@ -55,7 +103,7 @@ int main(int argc, char** argv[]) {
 				flags.push_back(argv[i]);
 			}
 			else {
-				
+				if (isDirectory(	
 			}
 		}
 	}
