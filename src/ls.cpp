@@ -158,7 +158,7 @@ int main(int argc, char* argv[]) {
 					cout << 152 << endl;
 					cout << directories.at(i) << ":" << endl;				
 					if (errno == ls(directoryName)) {
-					
+						cout << 161 << endl;					
 						return errno;
 					}
 				}
