@@ -136,6 +136,11 @@ int main(int argc, char* argv[]) {
 			}	
 
 
+			cout << "directories: ";
+			for (unsigned i = 0; i < directories.size(); ++i) 
+				cout << directories.at(i) << " ";
+			cout << endl;
+
 			for (unsigned int i = 0; i < directories.size(); ++i) {
 				flags.clear();
 				
