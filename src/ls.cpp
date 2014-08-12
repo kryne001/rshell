@@ -214,6 +214,7 @@ int main(int argc, char* argv[]) {
 			if (isDirectory(argv[i])) {
 				directories.push_back(argv[i]);
 				directories.at(i).insert(0, 1, '/');	
+				cout << 217 << endl;
 			}
 			else if (argv[i][0] == '-') {
 				
