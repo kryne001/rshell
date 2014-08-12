@@ -50,7 +50,7 @@ int ls(char* directoryName) {
 		return 0;
 }
 
-/*bool lsWithFlags(char* directoryName, vector<string> flags) {
+int lsWithFlags(char* directoryName, vector<string> flags) {
 
 	bool isA = false;
 	bool isL = false;
@@ -73,17 +73,20 @@ int ls(char* directoryName) {
 	}
 
 	dirent *direntp;
-	while ((direntp = readdir(dirp))) {
-		if (direntp->d_name[0] != '.') {
+	if (isA) {
+		while ((direntp = readdir(dirp))) {
+	
 					
 			//cout << direntp->d_name << endl; // use stat here to find attributes of a file
 			printf(direntp->d_name, 8);
 			cout << " ";
+
 		}
 	}
 	cout << endl;
 	closedir(dirp);
-}*/
+	return 0;
+}
 
 int main(int argc, char* argv[]) {
 	
@@ -95,7 +98,7 @@ int main(int argc, char* argv[]) {
 		}
 	}	
 	
-	/*else {
+	else {
 		
 		vector<string> directories;
 		vector<string> flags;
@@ -106,10 +109,20 @@ int main(int argc, char* argv[]) {
 			}
 			else {
 
-				if (isDirectory(	
+				if (isDirectory(argv[i])) {
+				
+					directories.push_back(argv[i]);
+				}	
 			}
 		}
-	}*/
+		if (directories.size() == 0) {
+					
+			if (errno == lsWithFlags(".", flag) {
+			
+				return errno;
+			}
+		}
+	}
 	
 
 
