@@ -79,6 +79,8 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		cout << 78 << endl;
 		struct stat current;
 
+		struct passwd *x;
+		struct group *y;
 		while ((direntp = readdir(dirp))) {
 			
 			//cout << "direntp: " << direntp << endl;
@@ -149,9 +151,18 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 
 				cout << current.st_nlink << " ";
 
-				cout << current.st_uid << " ";
+				if ((x = getpwuid(current.st_uid)) != NULL) 
+					cout << x->pw_name << " ";
+				else {
+					cerr << "error: " << errno << endl;
+					exit(0);
+				}
 
-				cout << current.st_gid << " ";
+				if ((y = getgrgid(current.st_gid)) != NULL)
+					cout << y->gr_name << " ";
+				else {
+					cerr << "error: " << errno << endl;
+					exit(0);	
 
 				cout << current.st_size << " ";
 				
