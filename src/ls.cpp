@@ -154,7 +154,7 @@ void printDashL(char* directoryName, vector<string> flags) {
 				strftime(buff, 20, "%b %d %H:%M", timeinfo);
 				printf("%s",buff);
 				
-				cout << " " << direntp->d_name;
+				cout << " " << directoryName << endl;
 }
 int lsWithFlags(char* directoryName, vector<string> flags) {
 	if (!isDirectory(directoryName)) {
