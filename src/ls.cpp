@@ -56,13 +56,14 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 	bool isL = false;
 	bool isR = false;
 	for (unsigned i = 0; i < flags.size(); ++i) {
-	
-		if (flags.at(i).at(1) == 'a') 
-			isA = true;
-		else if (flags.at(i).at(1) == 'l') 
-			isL = true;
-		else if (flags.at(i).at(1) == 'R')
-			isR = true;
+		for (unsigned k = 0; k < flags.at(i).size(); ++k) {
+			if (flags.at(i).at(k) == 'a') 
+				isA = true;
+			else if (flags.at(i).at(k) == 'l') 
+				isL = true;
+			else if (flags.at(i).at(k) == 'R')
+				isR = true;
+		}
 
 	}
 	char const *dirName = directoryName;
