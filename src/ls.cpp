@@ -143,6 +143,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 					cout << "-";
 				
 			}
+			cout << endl;
 				
 		}
 		closedir(dirp);
