@@ -83,7 +83,7 @@ bool lsWithFlags(char* directoryName, vector<string> flags) {
 	closedir(dirp);
 }
 
-int main(int argc, char** argv[]) {
+int main(int argc, char* argv[]) {
 	
 	if (argc == 1) {
 		
