@@ -51,7 +51,6 @@ int main() {
 				commands[i] = new char[tD.size() + 1];
 				strcpy(commands[i], tD.c_str());
 			}
-
 			else if (commandName != "&") {	
 				commands[i] = new char[commandName.length() + 1];
 				strcpy(commands[i], commandName.c_str());
