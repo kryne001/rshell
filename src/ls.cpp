@@ -148,8 +148,8 @@ int main(int argc, char* argv[]) {
 			for (unsigned int i = 0; i < directories.size(); ++i) {
 				flags.clear();
 				for (unsigned int k = static_cast<unsigned>(directoryIndex.at(i)); 
-					 (i + 1) < directoryIndex.size() && 
-					 k != (unsigned)directoryIndex.at(i + 1);
+					 (i + 1) <= directoryIndex.size() && 
+					 k < (unsigned)directoryIndex.at(i + 1);
 					  ++k) {
 					if (argv[k][0] == '-') {
 					
