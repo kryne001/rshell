@@ -346,10 +346,9 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				printf("%s",buff);
 				
 				cout << " " << direntp->d_name;
-				if (isR)
-					lsWithFlags(curdir, flags);	
 			}
 			cout << endl;
+			delete [] curdir;
 				
 		}
 		closedir(dirp);
