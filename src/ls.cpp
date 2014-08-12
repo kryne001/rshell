@@ -107,7 +107,7 @@ int main(int argc, char* argv[]) {
 		bool directoryInArgv = false;
 		for (int i = 1; i < argc; ++i) {
 			
-			if (isDirectory(argv[i]) {
+			if (isDirectory(argv[i])) {
 				directoryInArgv = true;
 				break;
 			}
