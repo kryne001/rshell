@@ -225,6 +225,9 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			if ((0 == strcmp(direntp->d_name, ".")) || (0 == strcmp(direntp->d_name, "..")))
 				continue;
 			string foo = directoryName;			
+			if (foo == ".") {
+				//enter here
+			}
 			foo.append("/");
 			foo.append(direntp->d_name);
 			char *x;
