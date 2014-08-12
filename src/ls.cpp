@@ -90,7 +90,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				perror("stat failed");
 				return -1;
 			}
-			if (direntp->d_name[0] == '-' && !isA)
+			if (direntp->d_name[0] == '.' && !isA)
 				continue;	
 			else {
 			
