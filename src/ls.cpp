@@ -218,7 +218,7 @@ int main(int argc, char* argv[]) {
 			} else {
 			
 				directories.push_back(argv[i]);
-				directories.at(i).insert(0, toInsert);
+				//directories.at(i).insert(0, toInsert);
 			}
 		}
 		if (flags.size() == 0) {
