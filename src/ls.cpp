@@ -68,6 +68,13 @@ void printDashL(char* directoryName, vector<string> flags) {
 			}
 
 		}	
+		struct stat current;
+		struct passwd *x;
+		struct group *y;
+		if (-1 == (stat(directoryName, &current))) {
+			perror("stat failed");
+			return;
+		}
 				if (current.st_mode & S_IFDIR) 
 					cout << "d";
 				
