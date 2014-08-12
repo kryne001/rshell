@@ -148,7 +148,7 @@ int main(int argc, char* argv[]) {
 				flags.clear();
 				
 				for (int k = directoryIndex.at(i); k < argc && !isDirectory(argv[k]); ++k) {
-				
+					cout << "k: " << k << endl;
 					if (argv[k][0] == '-') 
 						flags.push_back(argv[k]);
 				}
@@ -156,6 +156,7 @@ int main(int argc, char* argv[]) {
 				char* directoryName = new char[directories.at(i).size() + 1];
 				strcpy(directoryName, directories.at(i).c_str());
 				
+
 				if (flags.size() == 0) {
 				
 					if (errno == ls(directoryName)) {
