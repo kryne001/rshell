@@ -154,7 +154,13 @@ int main(int argc, char* argv[]) {
 				strcpy(directoryName, directories.at(i).c_str());
 				
 
-				if (flags.size() == 0) {
+				if (flags.size() == 0 && directories.size() == 1) {
+					//cout << 152 << endl;
+					//cout << directories.at(i) << ":" << endl;				
+					ls(directoryName);
+					cout << endl;
+				}
+				else if (flags.size() == 0) { 
 					//cout << 152 << endl;
 					cout << directories.at(i) << ":" << endl;				
 					ls(directoryName);
