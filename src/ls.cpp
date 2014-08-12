@@ -11,8 +11,9 @@ using namespace std;
 
 bool isDirectory(char* directoryName) {
 	
-	struct directoryInCurrent;
-	if (-1 == (stat(directoryName, directoryInCurrent))) {
+	struct stat directoryInCurrent;
+
+	if (-1 == (stat(directoryName, &directoryInCurrent))) {
 
 		perror("stat failed");
 		return false;
