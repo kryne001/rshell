@@ -260,9 +260,10 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				perror("stat failed");
 				return -1;
 			}
-			if (direntp->d_name[0] == '.' && !isA) // if there's no -a flag, don't print files 
+			if (direntp->d_name[0] == '.' && !isA)	{ // if there's no -a flag, don't print files 
 															   // starting with .
 				continue; 
+			}
 			else {
 			
 				if (current.st_mode & S_IFDIR) 
