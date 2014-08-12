@@ -90,7 +90,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			strcat(curdir, "/");
 			strcat(curdir, direntp->d_name);
 			
-			cout << curdir << endl;
+			//cout << curdir << endl;
 			if (-1 == (stat(/*toCur*/curdir, &current))) {
 		
 				perror("stat failed");
