@@ -346,7 +346,6 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 }
 
 int main(int argc, char* argv[]) {
-	cout << ENOTDIR << endl;
 	
 	if (argc == 1) {
 		
