@@ -80,8 +80,8 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 
 		while ((direntp = readdir(dirp))) {
 			
-			cout << "direntp: " << direntp << endl;
-			if (-1 == (stat(*((char*)direntp), &current))) {
+			//cout << "direntp: " << direntp << endl;
+			if (-1 == (stat(direntp->d_name, &current))) {
 		
 				perror("stat failed");
 				return -1;
