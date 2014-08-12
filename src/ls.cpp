@@ -73,7 +73,81 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 	}
 
 	dirent *direntp;
-	if (isA) {
+	if (isL) {
+	
+
+		struct stat current;
+
+		while ((direntp = readdir(dirp))) {
+			if (-1 == (stat(direntp, &current))) {
+		
+				perror("stat failed");
+				return -1;
+			}
+			if (!isA)
+				continue;	
+			else {
+			
+				if (current.st_mode & S_IFDIR) 
+					cout << "d";
+				else if (current.st_mode & S_IFLNK)
+					cout << "l";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IRUSR)
+					cout << "r"
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IWUSR)
+					cout << "w";
+				else
+					cout << "-";
+				
+				if (current.st_mode & S_IXUSR)
+					cout << "x";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IRGRP)
+					cout << "r";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IWGRP)
+					cout << "w";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IXGRP)
+					cout << "x";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IROTH)
+					cout << "r";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IWOTH)
+					cout << "w";
+				else
+					cout << "-";
+
+				if (current.st_mode & S_IXOTH)
+					cout << "x";
+				else
+					cout << "-";
+				
+			}
+				
+		}
+		closedir(dirp);
+		
+	}
+
+	else if (isA) {
 		while ((direntp = readdir(dirp))) {
 	
 					
