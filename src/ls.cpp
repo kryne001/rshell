@@ -218,7 +218,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 	if (isR && isDirectory(directoryName)) {
 		vector<char*> dirsInCurdir;
 		int i = 0;
-		while ((direntp = readdir(drip))) {
+		while ((direntp = readdir(dirp))) {
 			string temp = directoryName;
 			temp.append("/");
 			temp.append(direntp->d_name);
