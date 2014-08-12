@@ -127,7 +127,6 @@ int main(int argc, char* argv[]) {
 		}
 		else {
 
-			cout << 131 << endl;
 			for (int i = 1; i < argc; ++i) {
 			
 				if (isDirectory(argv[i])) {
@@ -136,19 +135,11 @@ int main(int argc, char* argv[]) {
 				}
 			}	
 
-			cout << "directories size: " << directories.size() << endl;
-			cout << "directories indeces are: ";
-			for (unsigned i = 0; i < directoryIndex.size(); ++i) {
-			
-				cout << directoryIndex.at(i) << " ";
-			}
-			cout << endl;
 
 			for (unsigned int i = 0; i < directories.size(); ++i) {
 				flags.clear();
 				
 				for (int k = directoryIndex.at(i) + 1; k < argc && !isDirectory(argv[k]); ++k) {
-					cout << "k: " << k << endl;
 					if (argv[k][0] == '-') 
 						flags.push_back(argv[k]);
 				}
@@ -158,13 +149,14 @@ int main(int argc, char* argv[]) {
 				
 
 				if (flags.size() == 0) {
-				
+					cout << directories.at(i) << ":" << endl;				
 					if (errno == ls(directoryName)) {
 					
 						return errno;
 					}
 				}
 				else {
+					cout << directories.at(i) << ":" << endl;				
 			   	if	(errno == lsWithFlags(directoryName, flags)) {
 				
 						return errno;
