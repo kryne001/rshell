@@ -29,7 +29,7 @@ bool isDirectory(char* directoryName) {
 int ls(char* directoryName) {
 
 	
-		char const *dirName = ".";
+		char const *dirName = directoryName;
 		DIR *dirp;
 		if (!(dirp = opendir(dirName))) {
 			cerr << "Error(" << errno << ") opening " << dirName << endl;
