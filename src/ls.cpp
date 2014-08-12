@@ -174,7 +174,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 
 		}	
 		if (isL) {
-			printDashL(directoryName, vector<string> flags);	
+			printDashL(directoryName, flags);	
 		}
 		
 	}
