@@ -27,7 +27,7 @@ bool isDirectory(char* directoryName) {
 	}
 }
 
-bool ls(char* directoryName) {
+void ls(char* directoryName) {
 
 	
 		char const *dirName = ".";
