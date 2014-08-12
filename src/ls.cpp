@@ -273,9 +273,10 @@ int main(int argc, char* argv[]) {
 				
 					char* directoryName = new char[directories.at(i).size() + 1];
 					strcpy(directoryName, directories.at(i).c_str());
-			
+					cout << directoryName << ":" << endl;	
 					lsWithFlags(directoryName, flags);	
 					delete [] directoryName;
+					cout << endl;
 				}
 			}
 		}
