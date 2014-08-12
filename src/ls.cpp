@@ -182,6 +182,9 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		if (isL) {
 			printDashL(directoryName, flags);	
 		}
+		else {
+			cout << directoryName << endl;
+		}
 		return 1;
 		
 	}
