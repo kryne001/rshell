@@ -101,9 +101,10 @@ int main(int argc, char* argv[]) {
 			if (argv[i][0] == '-') {
 				flags.push_back(argv[i]);
 			}
-			else {
+			/*else {
+
 				if (isDirectory(	
-			}
+			}*/
 		}
 	}
 	
