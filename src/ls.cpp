@@ -53,6 +53,13 @@ int ls(char* directoryName) {
 
 int lsWithFlags(char* directoryName, vector<string> flags) {
 
+	char const *dirName = directoryName;
+	DIR *dirp;
+	if (!(dirp = opendir(dirName))) {
+		cerr << "Error(" << errno << ") opening " << dirName << endl;
+		return errno;
+	}
+	
 	bool isA = false;
 	bool isL = false;
 	bool isR = false;
@@ -66,12 +73,6 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				isR = true; // there's an -R flag
 		}
 
-	}
-	char const *dirName = directoryName;
-	DIR *dirp;
-	if (!(dirp = opendir(dirName))) {
-		cerr << "Error(" << errno << ") opening " << dirName << endl;
-		return errno;
 	}
 
 	dirent *direntp;
@@ -88,6 +89,10 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			strcpy(curdir, "./");
 			strcat(curdir, directoryName);
 			strcat(curdir, "/");
+			strcat(curdir, direntp->d_name);
+			strcat(curdir, "/");
+			
+			cout << curdir << endl;
 			if (-1 == (stat(/*toCur*/curdir, &current))) {
 		
 				perror("stat failed");
@@ -180,7 +185,6 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				cout << " " << direntp->d_name;
 				if (isR)
 					lsWithFlags(curdir, flags);	
-				delete [] curdir;
 			}
 			cout << endl;
 				
