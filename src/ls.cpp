@@ -135,7 +135,7 @@ int main(int argc, char* argv[]) {
 				}
 			}	
 
-			cout << "directories size: " << directories.size() << endl;	
+			
 			for (unsigned int i = 0; i < directories.size(); ++i) {
 				flags.clear();
 				for (unsigned int k = static_cast<unsigned>(directoryIndex.at(i)); 
@@ -147,9 +147,17 @@ int main(int argc, char* argv[]) {
 						flags.push_back(argv[k]);
 					}
 				}
+
+				cout << "flags: ";
+				for (unsigned i = 0; i < flags.size(); ++i) {
+				
+					cout << flags.at(i) << " ";
+				}
+				cout << endl;
 				
 				char* directoryName = new char[directories.at(i).size() + 1];
 				strcpy(directoryName, directories.at(i).c_str());
+				
 				if (errno == lsWithFlags(directoryName, flags)) {
 				
 					return errno;
