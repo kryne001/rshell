@@ -156,8 +156,9 @@ int main(int argc, char* argv[]) {
 
 				if (flags.size() == 0) {
 					//cout << 152 << endl;
-					//cout << directories.at(i) << ":" << endl;				
+					cout << directories.at(i) << ":" << endl;				
 					ls(directoryName);
+					cout << endl;
 				}
 				else {
 					cout << directories.at(i) << ":" << endl;				
@@ -165,6 +166,7 @@ int main(int argc, char* argv[]) {
 				
 						return errno;
 					}
+					cout << endl;
 				}
 
 				delete [] directoryName;
