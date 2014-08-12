@@ -92,9 +92,11 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 			
 				if (current.st_mode & S_IFDIR) 
 					cout << "d";
-				else if (current.st_mode & S_IFLNK)
+				
+				if (current.st_mode & S_IFLNK)
 					cout << "l";
-				else if (!(current.st_mode & S_IFDIR) && !(current.st_mode & S_IFLNK))
+				
+				if (!(current.st_mode & S_IFDIR) && !(current.st_mode & S_IFLNK))
 					cout << "-";
 
 				if (current.st_mode & S_IRUSR)
