@@ -24,9 +24,10 @@ int main(int argc, char** argv[]) {
 					
 				//cout << direntp->d_name << endl; // use stat here to find attributes of a file
 				printf(direntp->d_name, 8);
-				cout << endl;
+				cout << " ";
 			}
 		}
+		cout << endl;
 		closedir(dirp);
 	}	
 	
