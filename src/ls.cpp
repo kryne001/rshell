@@ -1,4 +1,6 @@
 #include <iostream>
+#include <unistd.h>
+#include <sys/stat.h>
 #include <stdio.h>
 #include <vector>
 #include <sstream>
@@ -6,6 +8,18 @@
 #include <errno.h>
 #include <sys/types.h>
 using namespace std;
+
+bool isDirectory(char* directoryName) {
+	
+	struct directoryInCurrent;
+	int errorCheck;
+	if (-1 == (errorCheck = stat(directoryName, directoryInCurrent))) {
+
+		perror("stat failed");
+		exit(0);
+	}
+}
+
 
 int main(int argc, char** argv[]) {
 	
@@ -30,6 +44,21 @@ int main(int argc, char** argv[]) {
 		cout << endl;
 		closedir(dirp);
 	}	
+	
+	else {
+		
+		vector<string> directories;
+		vector<string> flags;
+		for (unsigned i = 1; i < argc; ++i) {
+			
+			if (argv[i][0] == '-') {
+				flags.push_back(argv[i]);
+			}
+			else {
+				
+			}
+		}
+	}
 	
 
 
