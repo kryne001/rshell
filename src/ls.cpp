@@ -136,9 +136,9 @@ int main(int argc, char* argv[]) {
 				}
 			}	
 
-			for (int i = 0; i < directories.size(); ++i) {
+			for (unsigned int i = 0; i < directories.size(); ++i) {
 				flags.clear();
-				for (int k = directoryIndex.at(i); (i + 1) < directoryIndex.size() && 
+				for (unsigned int k = directoryIndex.at(i); (i + 1) < directoryIndex.size() && 
 							k != directoryIndex.at(i + 1); ++k) {
 					if (argv[k][0] == '-') {
 					
