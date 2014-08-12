@@ -226,7 +226,12 @@ int main(int argc, char* argv[]) {
 					
 			for (unsigned i = 0; i < directories.size(); ++i) {
 			
-				ls(directories.at(i));
+				char* directoryName = new char[directories.at(i).size() + 1];
+				strcpy(directoryName, directories.at(i).c_str());
+				
+				ls(directoryName, flags);
+				
+				delete [] directoryName;
 			}
 		}
 		else {
