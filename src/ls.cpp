@@ -49,7 +49,8 @@ int ls(char* directoryName) {
 		closedir(dirp);
 		return 0;
 }
-bool lsWithFlags(char* directoryName, vector<string> flags) {
+
+/*bool lsWithFlags(char* directoryName, vector<string> flags) {
 
 	bool isA = false;
 	bool isL = false;
@@ -82,7 +83,7 @@ bool lsWithFlags(char* directoryName, vector<string> flags) {
 	}
 	cout << endl;
 	closedir(dirp);
-}
+}*/
 
 int main(int argc, char* argv[]) {
 	
