@@ -161,7 +161,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 				strftime(buff, 20, "%b %d %H:%M", timeinfo);
 				printf("%s",buff);
 				
-				cout << directp->d_name;
+				cout << direntp->d_name;
 			}
 			cout << endl;
 				
