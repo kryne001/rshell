@@ -11,6 +11,7 @@
 #include <sys/types.h>
 using namespace std;
 
+void printDashL(char* directoryName, vector<string> flags);
 bool isDirectory(char* directoryName) {
 	
 	struct stat directoryInCurrent;
@@ -29,7 +30,29 @@ bool isDirectory(char* directoryName) {
 }
 
 int ls(char* directoryName) {
+	if (!isDirectory(directoryName)) {
+	
+		bool isA = false;
+		bool isL = false;
+		bool isR = false;
+		for (unsigned i = 0; i < flags.size(); ++i) {
+			for (unsigned k = 0; k < flags.at(i).size(); ++k) {
+				if (flags.at(i).at(k) == 'a') 
+					isA = true; // there's an -a flag
+				else if (flags.at(i).at(k) == 'l') 
+					isL = true; // there's an -l flag
+				else if (flags.at(i).at(k) == 'R')
+					isR = true; // there's an -R flag
+			}
 
+		}	
+		if (isL) {
+			printDashL(directoryName, flags);	
+		}
+		return 1;
+		
+	}
+		
 	
 		char const *dirName = directoryName;
 		DIR *dirp;
@@ -176,6 +199,7 @@ int lsWithFlags(char* directoryName, vector<string> flags) {
 		if (isL) {
 			printDashL(directoryName, flags);	
 		}
+		return 1;
 		
 	}
 
