@@ -113,10 +113,13 @@ int main(int argc, char* argv[]) {
 			}
 			else {
 			
-				if (argv[i]	
+				if (argv[i][0] == '-') {
+				
+					flags.push_back(argv[i]);
+				}	
 			}
 		}
-		if (directories.size() == 0) {
+		if (!directoryInArgv) {
 					
 			if (errno == lsWithFlags(".", flags)) {
 			
