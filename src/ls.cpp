@@ -146,7 +146,7 @@ int main(int argc, char* argv[]) {
 					}
 				}
 
-				if (errno == lsWithFlags(directories.at(i), flags) {
+				if (errno == lsWithFlags(directories.at(i), flags)) {
 				
 					return errno;
 				}
