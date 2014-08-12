@@ -212,14 +212,13 @@ int main(int argc, char* argv[]) {
 		string toInsert = "/";
 		for (int i = 1; i < argc; ++i) {
 			
-			if (isDirectory(argv[i])) {
-				directories.push_back(argv[i]);
-				directories.at(i).insert(0, toInsert);
-				cout << 217 << endl;
-			}
-			else if (argv[i][0] == '-') {
+			if (argv[i][0] == '-') {
 				
 				flags.push_back(argv[i]);
+			} else {
+			
+				directories.push_back(argv[i]);
+				directories.at(i).insert(0, toInsert);
 			}
 		}
 		if (flags.size() == 0) {
