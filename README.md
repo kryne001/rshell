@@ -9,4 +9,10 @@ For example, if the user enters 'ls', the program will print to the terminal all
 
 BUGS
 ======
+Assignment 1:
+
 The program will only execute one iteration and then fail due to being unable to free the memory properly. All commands in the '/usr/bin' folder (along with their flags) will execute properly, but just fail after the whole iteration ends.
+
+Assignment 2: 
+
+-R will only go into one folder then stop. When running -l, all files will have 'l' for symbolically linked file. 
