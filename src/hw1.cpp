@@ -43,11 +43,22 @@ int main() {
 		istringstream commandStream(commandLine);
 		string commandName;
 		vector<string> newLine;
+<<<<<<< HEAD
 
 		for (int i = 0; commandStream >> commandName; ++i) {
 			
 			if (commandName != "&") {
 				newLine.push_back(commandName);
+=======
+		vector<string> type;
+		vector<string> files;
+		for (int i = 0; commandStream >> commandName; ++i) {
+			
+			if (commandName != "&") {
+				for (unsigned i = 0; i < commandName.size(); ++i) {
+					if (commandName.at(i) != ">" && commandName.at(i) != "
+					
+>>>>>>> 9f815b25d0fec28ea931123b80e49a35da9da361
 			}
 		
 		}
@@ -87,6 +98,7 @@ int main() {
 				perror("open failed");
 				exit(1);
 			}
+<<<<<<< HEAD
 
 			if (-1 == (close(1))) {
 
@@ -94,6 +106,15 @@ int main() {
 				exit(1);
 			}
 
+=======
+
+			if (-1 == (close(1))) {
+
+				perror("close failed");
+				exit(1);
+			}
+
+>>>>>>> 9f815b25d0fec28ea931123b80e49a35da9da361
 			if (-1 == (dup(x))) {
 			
 				perror("dup failed");
