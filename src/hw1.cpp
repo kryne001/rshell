@@ -1,4 +1,6 @@
 #include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <sys/wait.h>
 #include <iostream>
 #include <stdlib.h>
@@ -40,20 +42,34 @@ int main() {
 
 		istringstream commandStream(commandLine);
 		string commandName;
-		int commandLineSize = commandLine.size();	
-		char** commands = new char*[commandLineSize * sizeof(char*)];
+		vector<string> newLine;
+		vector<string> type;
+		vector<string> files;
+		for (int i = 0; commandStream >> commandName; ++i) {
+			
+			if (commandName != "&") {
+				for (unsigned i = 0; i < commandName.size(); ++i) {
+					if (commandName.at(i) != ">" && commandName.at(i) != "
+					
+			}
+		
+		}
+
+
+		int commandLineSize = newLine.size() + 1;	
+		char** commands = (char**)malloc(commandLineSize * sizeof(char*));
 		
 		string tD = "/bin/";
 		int size = 0;
-		for (int i = 0; commandStream >> commandName; ++i) {
+		for (unsigned i = 0; i < newLine.size(); ++i) {
 			if (i == 0) {
-				tD.append(commandName);
-				commands[i] = new char[tD.size() + 1];
+				tD.append(newLine.at(i));
+				commands[i] = (char*)malloc((tD.size() + 1) * sizeof(char*));
 				strcpy(commands[i], tD.c_str());
 			}
-			else if (commandName != "&") {	
-				commands[i] = new char[commandName.length() + 1];
-				strcpy(commands[i], commandName.c_str());
+			else if (newLine.at(i) != "&") {	
+				commands[i] = (char*)malloc((newLine.at(i).size() + 1) * sizeof(char*));
+				strcpy(commands[i], newLine.at(i).c_str());
 			}
 			++size;
 		}
@@ -63,41 +79,54 @@ int main() {
 		if (tD == "/bin/exit") 
 			exit(1);
 
+		
+
 		int pid = fork();
 		if (pid == 0) {
+			
+			int x = open("test.txt", O_RDWR | O_CREAT, 0777);
+			if (x == -1) {
+			
+				perror("open failed");
+				exit(1);
+			}
 
+			if (-1 == (close(1))) {
+
+				perror("close failed");
+				exit(1);
+			}
+
+			if (-1 == (dup(x))) {
+			
+				perror("dup failed");
+				exit(1);
+			}
+			
 			if (-1 == (execv(commands[0], commands))) {
 				
 				perror("execv failed");
 				exit(1);
 			}
 		
-			for (int i = 0; i <= size; ++i) {
-				delete [] commands[i];
-			}
-				
-			free(commands);
-			exit(0);
 		}
 		else if (pid > 0 && !isAmp) {
 
 				wait(NULL);
 				for (int i = 0; i < size; ++i) {
-					delete [] commands[i];
+					free(commands[i]);
 				}
 				
-				delete [] commands;
+				free(commands);
 		}
 		else if (pid > 0 && isAmp) {
 
 				for (int i = 0; i < size; ++i) {
-					delete [] commands[i];
+					free(commands[i]);
 				}
 				
-				delete [] commands;
+				free(commands);
 				continue;
 		}
-		
-
 	}	
 }
