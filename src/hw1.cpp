@@ -43,10 +43,12 @@ int main() {
 		istringstream commandStream(commandLine);
 		string commandName;
 		vector<string> newLine;
-
+		vector<string> files;
+		vector<string> exe;
 		for (int i = 0; commandStream >> commandName; ++i) {
 			
 			if (commandName != "&") {
+				for (unsigned i = 0; i < commandName.size(); ++i) {
 				newLine.push_back(commandName);
 			}
 		
