@@ -45,13 +45,33 @@ int main() {
 		vector<string> newLine;
 		vector<string> files;
 		vector<string> exe;
+		bool isRight = false;
 		for (int i = 0; commandStream >> commandName; ++i) {
 			
 			if (commandName != "&") {
+				string temp1;
+				string temp2;
+				string exeTemp;
 				for (unsigned i = 0; i < commandName.size(); ++i) {
-				newLine.push_back(commandName);
+					if (commandName.at(i) == '>') {
+					
+						exeTemp.push_back(commandName.at(i));
+						isRight = true;
+						continue;
+					}
+					else if(!isRight) 
+						temp1.push_back(commandName.at(i));
+						
+					else if (isRight) 
+						temp2.push_back(commandName.at(i));
+					
+				}
+				newLine.push_back(temp1);
+				if (temp2.size() > 0)
+					newLine.push_back(temp2);
+				if (exeTemp.size() > 0)
+					exe.push_back(exeTemp);
 			}
-		
 		}
 
 
@@ -82,26 +102,26 @@ int main() {
 
 		int pid = fork();
 		if (pid == 0) {
+			if (isRight == true) {	
+				int x = open("test.txt", O_RDWR | O_CREAT, 0777);
+				if (x == -1) {
 			
-			int x = open("test.txt", O_RDWR | O_CREAT, 0777);
-			if (x == -1) {
-			
-				perror("open failed");
-				exit(1);
-			}
+					perror("open failed");
+					exit(1);
+				}
 
-			if (-1 == (close(1))) {
+				if (-1 == (close(1))) {
 
-				perror("close failed");
-				exit(1);
-			}
+					perror("close failed");
+					exit(1);
+				}	
 
-			if (-1 == (dup(x))) {
+				if (-1 == (dup(x))) {
 			
-				perror("dup failed");
-				exit(1);
+					perror("dup failed");
+					exit(1);
+				}		
 			}
-			
 			if (-1 == (execv(commands[0], commands))) {
 				
 				perror("execv failed");
