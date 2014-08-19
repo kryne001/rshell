@@ -43,114 +43,86 @@ int main() {
 		istringstream commandStream(commandLine);
 		string commandName;
 		vector<string> newLine;
-		vector<string> files;
-		vector<string> exe;
-		bool isRight = false;
-		bool isRightTemp = false;
+		bool isCmd = false;
+		unsigned index = 0;
+		int newLineSize = 0;
+		vector<vector<string> > x;
 		for (int i = 0; commandStream >> commandName; ++i) {
 			
+			if (commandName == "exit") {
+				exit(1);
+			}
 			if (commandName != "&") {
 				string temp1;
 				string temp2;
 				string exeTemp;
-				for (unsigned i = 0; i < commandName.size(); ++i) {
-					if (commandName.at(i) == '>') {
-					
-						exeTemp.push_back(commandName.at(i));
-						isRight = true;
-						isRightTemp = true;
-						continue;
+				for (unsigned j = 0; j < commandName.size(); ++j) {
+					if (commandName.at(j) == '>' || commandName.at(j) == '<') {
+						 
+						if ((j + 1) <= commandName.size() && commandName.at(j + 1) == '>') 
+							exeTemp.push_back(commandName.at(j));
+
+						exeTemp.push_back(commandName.at(j));
+						isCmd = true;
 					}
-					else if(!isRightTemp) 
-						temp1.push_back(commandName.at(i));
+					
+					else if(!isCmd) 
+						temp1.push_back(commandName.at(j));
 						
-					else if (isRightTemp) 
-						temp2.push_back(commandName.at(i));
+					else if (isCmd) 
+						temp2.push_back(commandName.at(j));
 					
 				}
-				if (temp1.size() > 0)
-					newLine.push_back(temp1);
-				if (exeTemp.size() > 0)
-					newLine.push_back(exeTemp);
-				if (temp2.size() > 0)
-					newLine.push_back(temp2);
-
-				isRightTemp = false;
-			}
-		}
-
-
-		int commandLineSize = newLine.size() + 1;	
-		char** commands = (char**)malloc(commandLineSize * sizeof(char*));
-		
-		string tD = "/bin/";
-		int size = 0;
-		for (unsigned i = 0; i < newLine.size(); ++i) {
-			if (i == 0) {
-				tD.append(newLine.at(i));
-				commands[i] = (char*)malloc((tD.size() + 1) * sizeof(char*));
-				strcpy(commands[i], tD.c_str());
-			}
-			else if (newLine.at(i) != "&") {	
-				commands[i] = (char*)malloc((newLine.at(i).size() + 1) * sizeof(char*));
-				strcpy(commands[i], newLine.at(i).c_str());
-			}
-			++size;
-		}
-		if (size == 0) {
-			continue;
-		}
-		if (tD == "/bin/exit") 
-			exit(1);
-
-		
-
-		int pid = fork();
-		if (pid == 0) {
-			if (isRight == true) {	
-				int x = open(commands[2], O_RDWR | O_CREAT, 0777);
-				if (x == -1) {
-			
-					perror("open failed");
-					exit(1);
+				if (temp1.size() > 0) {
+					++index;	
+					if ((index - 1) > 0) { 
+						if (newLine.at(index - 1) != ">" || newLine.at(index - 1) != "<" 
+							 || newLine.at(index - 1) != ">>") {
+							newLine.push_back(temp1);
+							newLineSize += temp1.size() + 1;
+						}
+					}
+					else {
+						temp1.insert(0, "bin/");
+						newLine.push_back(temp1);
+						newLineSize += temp1.size() + 1;
+					}		
 				}
 
-				if (-1 == (close(1))) {
-
-					perror("close failed");
-					exit(1);
+				if (exeTemp.size() > 0 && exeTemp != "|") {
+					++index;
+					newLine.push_back(exeTemp);
+					newLineSize += exeTemp.size() + 1;
+				}
+				else if (exeTemp.size() > 0 && exeTemp == "|") {
+					x.push_back(newLine);
+					newLine.clear();
 				}	
 
-				if (-1 == (dup(x))) {
-			
-					perror("dup failed");
-					exit(1);
-				}		
-			}
-			if (-1 == (execv(commands[0], commands))) {
 				
-				perror("execv failed");
-				exit(1);
-			}
-		
-		}
-		else if (pid > 0 && !isAmp) {
-
-				wait(NULL);
-				for (int i = 0; i < size; ++i) {
-					free(commands[i]);
+				if (temp2.size() > 0) {
+					++index;
+					if ((index - 1) > 0 && newLine.at(index - 1) != ">" ||
+						  newLine.at(index - 1) != "<" || newLine.at(index - 1) != ">>") {
+						newLine.push_back(temp2);
+						newLineSize += temp2.size() + 1;
+					}
+					else {
+						temp1.insert(0, "bin/");
+						newLine.push_back(temp2);
+						newLineSize += temp2.size() + 1;
+					}
 				}
-				
-				free(commands);
-		}
-		else if (pid > 0 && isAmp) {
 
-				for (int i = 0; i < size; ++i) {
-					free(commands[i]);
-				}
-				
-				free(commands);
-				continue;
+
+				isCmd = false;
+
+			}
 		}
-	}	
+		if (newLine.size() > 0)
+			x.push_back(newLine);
+		cout << "x[0][0]: " << x[0][0] << endl;
+	}
+
+
 }
