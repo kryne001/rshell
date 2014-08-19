@@ -145,38 +145,47 @@ int main() {
 			if (pid == 0) {
 				if (i != 0) {
 					if (-1 == close(pfd[0])) 
-						perror("close failed");
+						perror("close at 148 failed");
 					if (-1 == dup(pfd[0])) 
-						perror("dup failed");
+						perror("dup at 150 failed");
 				}
 				if (i != x.size() -1) {
 					if (-1 == pipe(pfd)) 
-						perror("pipe failed");
+						perror("pipe at 154 failed");
 					if (-1 == close(1))
-						perror("close failed");
+						perror("close at 156 failed");
 					if (-1 == dup(pfd[1]))
-						perror("dup failed");
+						perror("dup at 158 failed");
 				}
 				if (i == 0) {
 					if (x.at(i).size() > 1) {
-						if (x.at(i).at(1) == "<" || x.at(i).at(1) == ">") {
+						if (x.at(i).at(1) == "<") {
 						
-							if (-1 == (fd = open(x.at(i).at(2).c_str(), O_RDWR | O_CREAT))) 
-								perror("open failed");
+							if (-1 == (fd = open(x.at(i).at(2).c_str(), O_RDWR))) 
+								perror("open at 165 failed");
 							if (-1 == close(0))
-								perror("close failed");
+								perror("close at 167 failed");
 							if (-1 == dup(fd))
-								perror("close failed");
+								perror("close at 169 failed");
+						}
+						else if (x.at(i).at(1) == ">") {
+							if (-1 == (fd = open(x.at(i).at(2).c_str(), O_RDWR | O_CREAT)))
+								perror("open at 173 failed");
+							if (-1 == close(0))
+								perror("close at 175 failed");
+							if (-1 == dup(fd))
+								perror("close at 177 failed");
+							
 						}
 
 						else if (x.at(i).at(1) == ">>") {
 							
-							if (-1 == (fd = open(x.at(i).at(2).c_str(), O_RDWR | O_CREAT))) 
-								perror("open failed");
+							if (-1 == (fd = open(x.at(i).at(2).c_str(), O_APPEND))) 
+								perror("open at 184 failed");
 							if (-1 == close(0))
-								perror("close failed");
+								perror("close at 186 failed");
 							if (-1 == dup(fd))
-								perror("close failed");
+								perror("close at 188 failed");
 						
 						}	
 					}
@@ -185,21 +194,25 @@ int main() {
 				
 				}
 				if (i == x.size() - 1) {
-					if (-1 == close(1))
-						perror("close failed");
-					if (-1 == dup(fd))
-						perror("dup failed");
+					if (x.at(i).size() > 1) {
+						if (-1 == close(1))
+							perror("close at 198 failed");
+						if (-1 == dup(fd))
+							perror("dup at 200 failed");
+					}
 				}
-				commands = (char**)malloc((x.at(i).at(0).size() + 1) * sizeof(char*));
+				commands = (char**)malloc((x.at(i).at(0).size() + 2) * sizeof(char*));
 				commands[0] = (char*)malloc((x.at(i).at(0).size() + 1) * sizeof(char*));
+				commands[1] = NULL;
 				strcpy(commands[0], x.at(i).at(0).c_str());
+				cerr << "commands[0]:" << commands[0] << endl;
 				if (-1 == execv(commands[0], commands)) 
-					perror("exec failed");
+					perror("exec at 206 failed");
 			}
 		}
 		for (unsigned i = 0; i < numOfPid.size(); ++i) 
 			if (-1 == wait(&numOfPid.at(i)))
-				perror("wait failed");
+				perror("wait at 211 failed");
 
 	}
 
