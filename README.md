@@ -26,6 +26,19 @@ the `-R` flag not only prints the contents in the current directory, but also re
 
 The combination of all the three flags also works, in any order, as long as the command is prepended with the `-` symbol. Any directories or files passed in will execute according to the flags passed in as well.
 
+Assignment 3: redirect
+======
+
+redirect is an extension of Rshell, in which File IO redirection and piping is avaiable for use.
+
+The `>` arrow takes a command's output and inserts it into a file. For example, the command `$ ls > test` will create a file `test` and populate it with the output of the ls command.
+
+The `<` arrow prints the contents of the right operand to standard out, along with the contents of the left operand.
+
+The `|` symbol will create a pipe between the left and right operands of the symbol.
+
+The `>>` symbol will append onto the end of the contents of the right operand the contents of the left operand.
+
 BUGS
 ======
 Assignment 1:
@@ -36,3 +49,7 @@ Assignment 2:
 
 -R will only go into one folder then stop. When running -l, all files will have 'l' for symbolically linked file. 
 the program will only work for contents in directories accessible in the current directory and the current directory
+
+Assignment 3:
+
+only File IO works, and only once.
