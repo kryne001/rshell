@@ -43,10 +43,10 @@ int main() {
 		istringstream commandStream(commandLine);
 		string commandName;
 		vector<string> newLine;
-<<<<<<< HEAD
 		vector<string> files;
 		vector<string> exe;
 		bool isRight = false;
+		bool isRightTemp = false;
 		for (int i = 0; commandStream >> commandName; ++i) {
 			
 			if (commandName != "&") {
@@ -58,38 +58,24 @@ int main() {
 					
 						exeTemp.push_back(commandName.at(i));
 						isRight = true;
+						isRightTemp = true;
 						continue;
 					}
-					else if(!isRight) 
+					else if(!isRightTemp) 
 						temp1.push_back(commandName.at(i));
 						
-					else if (isRight) 
+					else if (isRightTemp) 
 						temp2.push_back(commandName.at(i));
 					
 				}
-				newLine.push_back(temp1);
+				if (temp1.size() > 0)
+					newLine.push_back(temp1);
+				if (exeTemp.size() > 0)
+					newLine.push_back(exeTemp);
 				if (temp2.size() > 0)
 					newLine.push_back(temp2);
-				if (exeTemp.size() > 0)
-					exe.push_back(exeTemp);
-=======
-<<<<<<< HEAD
 
-		for (int i = 0; commandStream >> commandName; ++i) {
-			
-			if (commandName != "&") {
-				newLine.push_back(commandName);
-=======
-		vector<string> type;
-		vector<string> files;
-		for (int i = 0; commandStream >> commandName; ++i) {
-			
-			if (commandName != "&") {
-				for (unsigned i = 0; i < commandName.size(); ++i) {
-					if (commandName.at(i) != ">" && commandName.at(i) != "
-					
->>>>>>> 9f815b25d0fec28ea931123b80e49a35da9da361
->>>>>>> 0ddda4caec51e9aa4fae5d68768f8f79236a6252
+				isRightTemp = false;
 			}
 		}
 
@@ -122,30 +108,12 @@ int main() {
 		int pid = fork();
 		if (pid == 0) {
 			if (isRight == true) {	
-				int x = open("test.txt", O_RDWR | O_CREAT, 0777);
+				int x = open(commands[2], O_RDWR | O_CREAT, 0777);
 				if (x == -1) {
 			
-<<<<<<< HEAD
 					perror("open failed");
 					exit(1);
 				}
-=======
-			int x = open("test.txt", O_RDWR | O_CREAT, 0777);
-			if (x == -1) {
-			
-				perror("open failed");
-				exit(1);
-			}
-<<<<<<< HEAD
-
-			if (-1 == (close(1))) {
-
-				perror("close failed");
-				exit(1);
-			}
-
-=======
->>>>>>> 0ddda4caec51e9aa4fae5d68768f8f79236a6252
 
 				if (-1 == (close(1))) {
 
@@ -153,12 +121,7 @@ int main() {
 					exit(1);
 				}	
 
-<<<<<<< HEAD
 				if (-1 == (dup(x))) {
-=======
->>>>>>> 9f815b25d0fec28ea931123b80e49a35da9da361
-			if (-1 == (dup(x))) {
->>>>>>> 0ddda4caec51e9aa4fae5d68768f8f79236a6252
 			
 					perror("dup failed");
 					exit(1);
