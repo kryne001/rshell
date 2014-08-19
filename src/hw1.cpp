@@ -15,8 +15,16 @@ int main() {
 	string commandLine;
 	while (1){
 		char host[128];
-		gethostname(host, sizeof host);
-		cout << getlogin()  << "@" << host << "$ ";
+		if (-1 == (gethostname(host, sizeof host))) {
+			perror("get host name failed");
+			exit(1);
+		}
+		char login[128];
+		if (getlogin_r(login, sizeof(login) -1)) {
+			perror("login failed");
+			exit(1);
+		}
+		cout << login <<  "@" << host << "$ ";
 		getline(cin, commandLine);
 		
 		bool isComment = false;
@@ -59,9 +67,10 @@ int main() {
 				for (unsigned j = 0; j < commandName.size(); ++j) {
 					if (commandName.at(j) == '>' || commandName.at(j) == '<') {
 						 
-						if ((j + 1) <= commandName.size() && commandName.at(j + 1) == '>') 
-							exeTemp.push_back(commandName.at(j));
-
+						if ((j + 1) < commandName.size()) {
+							if (commandName.at(j + 1) == '>') 
+								exeTemp.push_back(commandName.at(j));
+						}
 						exeTemp.push_back(commandName.at(j));
 						isCmd = true;
 					}
@@ -75,18 +84,20 @@ int main() {
 				}
 				if (temp1.size() > 0) {
 					++index;	
-					if ((index - 1) > 0) { 
+					if ((index - 1) > 0 && (index - 1) < newLine.size()) { 
 						if (newLine.at(index - 1) != ">" || newLine.at(index - 1) != "<" 
-							 || newLine.at(index - 1) != ">>") {
+							/* || newLine.at(index - 1) != ">>"*/) {
 							newLine.push_back(temp1);
 							newLineSize += temp1.size() + 1;
 						}
 					}
-					else {
-						temp1.insert(0, "bin/");
+					else if (newLine.size() == 0) {
+						temp1.insert(0, "/bin/");
 						newLine.push_back(temp1);
 						newLineSize += temp1.size() + 1;
 					}		
+					else 
+						newLine.push_back(temp1);
 				}
 
 				if (exeTemp.size() > 0 && exeTemp != "|") {
@@ -108,9 +119,7 @@ int main() {
 						newLineSize += temp2.size() + 1;
 					}
 					else {
-						temp1.insert(0, "bin/");
 						newLine.push_back(temp2);
-						newLineSize += temp2.size() + 1;
 					}
 				}
 
@@ -121,7 +130,77 @@ int main() {
 		}
 		if (newLine.size() > 0)
 			x.push_back(newLine);
-		cout << "x[0][0]: " << x[0][0] << endl;
+
+		int pfd[2];
+		vector<int> numOfPid;
+		char** commands; 
+		int fd;
+		for (unsigned i = 0; i < x.size(); ++i) {
+			int pid;
+
+			if (-1 == (pid = fork())) 
+				perror("fork failed");
+
+			numOfPid.push_back(pid);
+			if (pid == 0) {
+				if (i != 0) {
+					if (-1 == close(pfd[0])) 
+						perror("close failed");
+					if (-1 == dup(pfd[0])) 
+						perror("dup failed");
+				}
+				if (i != x.size() -1) {
+					if (-1 == pipe(pfd)) 
+						perror("pipe failed");
+					if (-1 == close(1))
+						perror("close failed");
+					if (-1 == dup(pfd[1]))
+						perror("dup failed");
+				}
+				if (i == 0) {
+					if (x.at(i).size() > 1) {
+						if (x.at(i).at(1) == "<" || x.at(i).at(1) == ">") {
+						
+							if (-1 == (fd = open(x.at(i).at(2).c_str(), O_RDWR | O_CREAT))) 
+								perror("open failed");
+							if (-1 == close(0))
+								perror("close failed");
+							if (-1 == dup(fd))
+								perror("close failed");
+						}
+
+						else if (x.at(i).at(1) == ">>") {
+							
+							if (-1 == (fd = open(x.at(i).at(2).c_str(), O_RDWR | O_CREAT))) 
+								perror("open failed");
+							if (-1 == close(0))
+								perror("close failed");
+							if (-1 == dup(fd))
+								perror("close failed");
+						
+						}	
+					}
+					//else {
+						
+				
+				}
+				if (i == x.size() - 1) {
+					if (-1 == close(1))
+						perror("close failed");
+					if (-1 == dup(fd))
+						perror("dup failed");
+				}
+				commands = (char**)malloc((x.at(i).at(0).size() + 1) * sizeof(char*));
+				commands[0] = (char*)malloc((x.at(i).at(0).size() + 1) * sizeof(char*));
+				strcpy(commands[0], x.at(i).at(0).c_str());
+				if (-1 == execv(commands[0], commands)) 
+					perror("exec failed");
+			}
+		}
+		for (unsigned i = 0; i < numOfPid.size(); ++i) 
+			if (-1 == wait(&numOfPid.at(i)))
+				perror("wait failed");
+
 	}
 
 
