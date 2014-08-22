@@ -52,6 +52,8 @@ int main() {
 		string commandName;
 		string tempHolder;
 		vector<string> newLine;
+		string filename;
+		bool right = false, left = false, twoRight = false;
 		for (int i = 0; commandStream >> commandName; ++i) {
 			if (commandName == "exit")
 				exit(0);
@@ -61,16 +63,30 @@ int main() {
 				left = true;
 			else if (commandName == ">>")
 				twoRight = true;
-			else if (commandName != "&")
-				newLine.push_back(commandName);
+			else if (commandName != "&") {
+				if (!right && !left && !twoRight)
+					newLine.push_back(commandName);
+				else
+					filename = commandName;
+			}
 		}
 
-		for (unsigned i = 0; i < newLine.size(); ++i) {
-			if (newLine.at(i).at(0) == '-') 
-				newLine.at(i - 1).insert(newLine.at(i).size() - 1, newLine.at(i));
+		char *x;
+		if (NULL == (x = getenv("PATH"))) {
+			perror("getenv failed");
+			continue;
 		}
+		//vector<string> paths;
+		string path;
+		path.append(x);
 		
-		for (unsigned i = 0; i < newLine.size(); ++i)
-			cout << "newLine at " << i << " = " << newLine.at(i) << endl;
+		char** commands = (char**)malloc((newLine.size() + 1) * sizeof (char*));
+		for (unsigned i = 0; i < newLine.size(); ++i) {
+			commands[i] = (char*)malloc((newLine.at(i).size() + 1) * sizeof (char*));
+			strcpy(commands[i], newLine.at(i).c_str());
+		}
+
+		
+		
 	}
 }
