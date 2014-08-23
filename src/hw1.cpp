@@ -98,24 +98,31 @@ int main() {
 			exit(1);
 		}
 		if (pid == 0) {
-					
+			
+			if (right) {
+				int fd;
+				if (-1 == (fd = open(filename.c_str(), O_RDWR | O_CREAT, 0777)))
+					perror("open failed");
+				if (-1 == (close(1)))
+					perror("close failed");
+				if (-1 == (dup(fd)))
+					perror("dup failed");
+			}
 			for (unsigned i = 0; i < paths.size(); ++i) {
 				string temp = paths.at(i);
 				temp.append(newLine.at(0));
 				vector<string> x;
 				x.push_back(temp);
 				unsigned x_size = newLine.at(0).size() + 1;
-				for (unsigned j = 1; j < newLine.size(); ++i) {
+				for (unsigned j = 1; j < newLine.size(); ++j) {
 					x_size += newLine.at(j).size() + 1;
 					x.push_back(newLine.at(j));
 				}
 
 				char **commands = (char**)malloc(x_size * sizeof (char*));
-				cout << __LINE__ << endl;
 				int a = 0;
 				for (unsigned j = 0; j < x.size(); ++j) {
 					commands[j] = (char*)malloc((x.at(j).size() + 1) * sizeof (char*));
-					cout << __LINE__ << endl;
 					strcpy(commands[j], x.at(j).c_str());
 					++a;
 				}
