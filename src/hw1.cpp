@@ -76,16 +76,57 @@ int main() {
 			perror("getenv failed");
 			continue;
 		}
-		//vector<string> paths;
+		vector<string> paths;
 		string path;
 		path.append(x);
-		
-		char** commands = (char**)malloc((newLine.size() + 1) * sizeof (char*));
-		for (unsigned i = 0; i < newLine.size(); ++i) {
-			commands[i] = (char*)malloc((newLine.at(i).size() + 1) * sizeof (char*));
-			strcpy(commands[i], newLine.at(i).c_str());
+		unsigned index = 0;
+		for (unsigned i = 0; i < path.size(); ++i) {
+			if (path.at(i) == ':') {
+				string temp = path.substr(index, i - index);
+				paths.push_back(temp);
+				index = i + 1;
+			}
 		}
 
+		for (unsigned i = 0; i < paths.size(); ++i) {
+			if (paths.at(i).at(paths.at(i).size() -1 ) != '/')
+				paths.at(i).append("/");
+		}
+		int pid;
+		if (-1 == (pid = fork())) {
+			perror("fork failed");
+			exit(1);
+		}
+		if (pid == 0) {
+					
+			for (unsigned i = 0; i < paths.size(); ++i) {
+				string temp = paths.at(i);
+				temp.append(newLine.at(0));
+				vector<string> x;
+				x.push_back(temp);
+				unsigned x_size = newLine.at(0).size() + 1;
+				for (unsigned j = 1; j < newLine.size(); ++i) {
+					x_size += newLine.at(j).size() + 1;
+					x.push_back(newLine.at(j));
+				}
+
+				char **commands = (char**)malloc(x_size * sizeof (char*));
+				cout << __LINE__ << endl;
+				int a = 0;
+				for (unsigned j = 0; j < x.size(); ++j) {
+					commands[j] = (char*)malloc((x.at(j).size() + 1) * sizeof (char*));
+					cout << __LINE__ << endl;
+					strcpy(commands[j], x.at(j).c_str());
+					++a;
+				}
+				commands[a] = NULL;
+				if (-1 == execv(commands[0], commands))
+					perror("execv failed");
+			}
+		}
+		else if (pid > 0)
+			wait(0);
+		
 		
 		
 	}
