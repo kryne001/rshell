@@ -11,6 +11,14 @@
 #include <string.h>
 using namespace std;
 
+void changeDirectory(string input) {
+	char* dir = new char[1024];
+	if (NULL == getcwd(dir, 1024))
+		perror("getcwd failed");
+	
+}
+
+
 int main() {
 	string commandLine;
 	while (1){
@@ -127,9 +135,9 @@ int main() {
 					++a;
 				}
 				commands[a] = NULL;
-				if (-1 == execv(commands[0], commands))
-					perror("execv failed");
+				execv(commands[0], commands);
 			}
+				perror("execv failed");
 		}
 		else if (pid > 0)
 			wait(0);
