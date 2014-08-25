@@ -13,8 +13,27 @@ using namespace std;
 
 void changeDirectory(string input) {
 	char* dir = new char[1024];
-	if (NULL == getcwd(dir, 1024))
+	if (input == "") {
+		if (NULL == (dir = getenv("home")))
+			perror("getenv failed");
+	}
+	else if (NULL == getcwd(dir, 1024))
 		perror("getcwd failed");
+	if (input == "..") {
+		unsigned index = 0;
+		for (unsigned i = 0; dir[i] != '\0', ++i) {
+			if (dir[i] == '/')
+				index = i;
+		}
+		dir[i] = '\0';
+		if (-1 == (chdir(dir)))
+			perror("chdir failed");
+
+		return;
+	}
+	else if (input == "") {
+			
+	}
 	
 }
 
