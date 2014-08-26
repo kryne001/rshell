@@ -9,38 +9,34 @@
 #include <vector>
 #include <sstream>
 #include <string.h>
+#include <signal.h>
 using namespace std;
 
 void changeDirectory(string input) {
-	char* dir = new char[1024];
-	if (input == "") {
-		if (NULL == (dir = getenv("home")))
-			perror("getenv failed");
-	}
-	else if (NULL == getcwd(dir, 1024))
-		perror("getcwd failed");
-	if (input == "..") {
-		unsigned index = 0;
-		for (unsigned i = 0; dir[i] != '\0', ++i) {
-			if (dir[i] == '/')
-				index = i;
-		}
-		dir[i] = '\0';
-		if (-1 == (chdir(dir)))
-			perror("chdir failed");
-
-		return;
-	}
-	else if (input == "") {
-			
-	}
-	
+	if (-1 == chdir(input.c_str()))
+		perror("chdir failed");
 }
+
+void sigInt(int sig) { 
+	cout << "eC";
+}
+
+void sigStop(int sig) {
+	pid_t x = getpid();
+	if (-1 == kill(x, SIGSTOP))
+		perror("kill failed");
+}
+
 
 
 int main() {
 	string commandLine;
 	while (1){
+	
+	/*	if (SIG_ERR == signal(SIGINT, sigInt)) 
+			perror("signal for sigInt failed");
+		if (SIG_ERR == signal(SIGTSTP, sigStop))
+			perror("signal for sigtstp failed");*/
 		char host[128];
 		if (-1 == (gethostname(host, sizeof host))) {
 			perror("get host name failed");
@@ -80,8 +76,12 @@ int main() {
 		string tempHolder;
 		vector<string> newLine;
 		string filename;
-		bool right = false, left = false, twoRight = false;
+		bool right = false, left = false, twoRight = false, cd = false;
 		for (int i = 0; commandStream >> commandName; ++i) {
+			if (commandName == "^C") {
+				if (SIG_ERR == signal(SIGINT, sigInt))
+					perror("signal for sigint failed");
+			}
 			if (commandName == "exit")
 				exit(0);
 			if (commandName == ">") 
@@ -90,12 +90,20 @@ int main() {
 				left = true;
 			else if (commandName == ">>")
 				twoRight = true;
+			else if (commandName == "cd")
+				cd = true;
 			else if (commandName != "&") {
 				if (!right && !left && !twoRight)
 					newLine.push_back(commandName);
 				else
 					filename = commandName;
 			}
+		}
+
+		if (cd == true) {
+			changeDirectory(newLine.at(0));
+			cout << "used mine" << endl;
+			continue;
 		}
 
 		char *x;
