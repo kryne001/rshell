@@ -693,4 +693,471 @@ ac7d89af71bfe201d2d05fe81873ba659f7c3a
 .  ..  1568cf7ccc32cc4a5b1f1f82f4c3ccc0799b1e  8d396927834caac1b3fa366df98332b3bd7960
 
 ./.git/objects/90:
-.   babe967625e3bfa7e137b293e7ef962c7c2758  e75c3009088dab2f997334db7f8676
+.   babe967625e3bfa7e137b293e7ef962c7c2758  e75c3009088dab2f997334db7f86767979e2c6
+..  baf9940b06a0cc77c82c7eb720acb96b4ba361
+
+./.git/objects/91:
+.					5c4ab3053c6277dad35e18f780b8f5063d16a7
+..					d406b47c01c7ca3351a48c78795cd8732fceb1
+41b0f62131a0b213293166f4399c1ed0128385	fe14f45ea5731d1d2fd93eaf94d1a6ea58b569
+56a8541dba3dc582428429c5277bf5f5bf6e5b
+
+./.git/objects/92:
+.   6181f3ca4ded1d3da32bc3d74e99ef7f99090e  e6dc7814e620c70a501758f423a3d48d35ea7e
+..  acf23f2d2b1a2042496fb1f66841aa4c4333c8
+
+./.git/objects/93:
+.   2731abb4154e4a8c4469e22d405aac2bde9e23  ad2fe40f801e599211be308010d70909e39688
+..  96187706abb93039671684331a887acb9b43bb
+
+./.git/objects/94:
+.					71738be0995b98ff3a4360c8ced859b9851d23
+..					845056d3508d819fc7dfadf338659e513d3a36
+2df358eec499c9f5617611d86c7f798de76e10	d3283b7fcce3aff641333a717520b383a314db
+4fe5ad8233da62d903021b3932235852c9997a	dbea198713c0c3a2118da0e1c095b7cf3d3559
+
+./.git/objects/95:
+.   4055d6761102ad6c6ed43889e616c2b1742a08  998ba089a055d157a0d4ab6ad41acc68d814d9
+..  6ae3d71a455e0803261f8bc8d8b7d31207bf65  ebf757abbba58cb34fce1dca41f7df6b62100d
+
+./.git/objects/96:
+.					66070aea1c0e894ce384e7fbddcd934c1bd3c4
+..					8155dac530b891daa309db53d0c96fae7f82f6
+0cf24fb9c9309dbb389affb3d80bd52f8e28b5	8912f866adbd0193ec5621b246a5ad77384017
+3a4c3469c0a33e5c0371d9272bb0c9997fcdb0
+
+./.git/objects/97:
+.  ..  dc439c5d5ec1fd0e7188b47600d4849eecc25c  f902dc543a89cbfe00f027248e57a2e7d65907
+
+./.git/objects/98:
+.   62e2ac71d89933bc7ca75fa73edb399e2434db  dd969475c4f0d5b92d42be4820dc4c8d124a55
+..  66b3103f343989659bcee03a733c61d7858d94  f38cf33d8dafaca9732d0c7b0daf07f848c36d
+
+./.git/objects/99:
+.   161f0033b826e33b28bd5242d216d66c49bc44  7176b110cc217471fa0058f8a6a37e5ee332f3
+..  5800879dece066e506569ed02dc75043cdcda2  f322f7053b487c0c0218d3f5246194b3835115
+
+./.git/objects/9a:
+.   32b989ff809674706143e49bb16e5d0c03b0e0  9d5dd2a83817adf230ba0072ec27b3a713b9eb
+..  671b39f35b375dd1188f1d527323760cfa9d90  aeac88f09d783171434f83b9b3313379ec59b0
+
+./.git/objects/9b:
+.   814fc859fd5ddb6b99c600c44c124a886d6be4  ce1986994458afc14976905ff3c2a683757ddf
+..  be1fb218c180263d11814b65214e8f86ab1a8d
+
+./.git/objects/9c:
+.   709707878b24a729e210e598d20d16e2d74396  71b209099df5588095eea6bd05c945eca347d1
+..  7141b45c6349b88a14b5c28a273d58b2ebe12a  ee0a8d88dcb08a4d7ffe7ee3665710cb81b0bc
+
+./.git/objects/9d:
+.  ..  916dd24dc1f4baa01079a45b876213e7cd9dc6
+
+./.git/objects/9e:
+.  ..  64904f62f8777caafc7d9fd826152c21f580cb  8dc9f150ffbd56d12b919687b6d29258e31d97
+
+./.git/objects/9f:
+.  ..  815b25d0fec28ea931123b80e49a35da9da361  d82daed71f6ec4814f3367f4791bd915d9c4a8
+
+./.git/objects/a0:
+.					89c017af4f760758e04f1c30c2211515f08db9
+..					de8f869b9f3973cfe0d858088520b4672ffe69
+2693e565bfd01b025b36e1ee3f996928a44ca3	f6883326be5e83b75b029a97b250e1cec28b68
+338381c5d62d62f53c3f393386d1bbacbb1e8d	fc47b737b3cb7767b9d272900352d692f41251
+36285620c952c6b9f5d254523eddfcf6cf8ea6
+
+./.git/objects/a1:
+.   1efc3ed1f4c1abda069c19989ec717f9f22eb3  bccd1b9a0e39663c07922a39ce8642afbb3975
+..  47300ba97d60ad950fbd0433e411caaa8d26ad  dbbba55471215888c59ca4156c170ee804befc
+
+./.git/objects/a2:
+.   8011830ba68a983f73fb94f608d30902b56321  b75b8a49687e12c02824bb56fd285fffbb870e
+..  b4df3b6e6822522ab91b50e2a0904cfbffe97b  f7a3fd3e5a1bf7ecec185f4080d5c6b5afd8c8
+
+./.git/objects/a3:
+.					3a066d75d3463b7bb092207cc3e631327f52b1
+..					72464f51b09193a2e805a71d9af2580b0de502
+194d476b1bbe17e39d2615232fe734fc691c1f	806b632213831ecf0054430eb16e9f3d0c8e74
+3445ceab457c7b85513cec95500b3fd4fe429a	dc47f8e20e5d5195f61e1e8029020361509662
+
+./.git/objects/a4:
+.					b80d1d00e40987beab561285edce47ef1938fe
+..					e0bf9f678bc23014e49fc5bf34ff57740da13f
+0be10a4204c8defd005ad5ea6fc074ee5e1835	eaea7fa051436f869862625f45798007a2065c
+81049f270d7c4fca6433cd8df209b66fcaee38	fa629ddbe6f373d7a4483b05cb4c6f3b4839d1
+99b692fc86043be89208eae12e03393438a1c9
+
+./.git/objects/a5:
+.  ..  c6b1b15bec51ab8d6dbdad1a9a9e9658ca758a  deb4b5b51eb7f71ceee31043fa87b0880f2c3e
+
+./.git/objects/a6:
+.					b9a3f525752da3c61e5e2b8239c181b04cf24f
+..					c99618175b7807a0e28a1217646e247bbf5680
+194f80b9bbf812b4e32a9f0a821470eab65009	e9e28ce0fdfb3cff1935e7eb5e8bdcab378f86
+28a8a77f2a1c1a7ff275d24bf730861cfe0f70	ef4502b252091aa5b68ed2e286959cb7af3489
+
+./.git/objects/a7:
+.  ..  ac8308cda86f0f0fd840e61a8f5f7f911066d4  e30b8e86ea02aebcd2362cacc273b7752f29b5
+
+./.git/objects/a8:
+.					6a63cabb7e41bb6ddbd0891fe1993def8a2a93
+..					aefd287a20a4842bab664bec133cae8d82c8c6
+0bd05aa5c33bbb03a4c103b961767f6eb7e0a7	c6d7358fef8e36046feb54f0c86e253c1100e1
+12528ee5c2496c080b9c4f0dade6cb5ec05c16
+
+./.git/objects/a9:
+.   0963c49b26d8f97553c80c29e88d5ead268182  59e0cc9fd57ac8775b3690a9aed5ee09fbfd59
+..  4f1ce964b5748b24c0150a0cf1557d47a1446a
+
+./.git/objects/aa:
+.					34da44b97ac6e5b382ef7c51ec908550b9f3a5
+..					505817a7bddba651c4123d0be883c92da3b907
+05329c215b026e4f85d4931761106cae82d9d3	9f12302d58e996b47f4e9dc16cd7b6c8beec80
+34d4ef344b8f52df77dd58d09083ff1c9bb13c	fb59b2815e7166b769a02ade6dd83459553333
+
+./.git/objects/ab:
+.  ..  48999710ceef1a3d3440a9b1a2ec11e9d79163  fa61c9afbd8824e6de0dc938fc27e78c645082
+
+./.git/objects/ac:
+.   112ee7c43790bbf252d828a5ffb205c84dac09  76286875f8839fcd803ecb8b94b34fe1b7b5a0
+..  2f4355a5f420f1679804345f91d9e71127dd65  a3a46952819cc2844aceede9128f7789cb0e3c
+
+./.git/objects/ad:
+.  ..  18eff5c5971f52154dde60ebaa2a97a4a7be8c  3c0712c64f36d41d6d5fa26afc83c08937ce26
+
+./.git/objects/ae:
+.   29bc95fe083a10fd678c5c240c99bc44ca8461  e82006f6e8754537a6632c66539c36a083f4c5
+..  5fd771eccfee4b1a58363f6565b462189344fe
+
+./.git/objects/af:
+.   15f62cfff4084882112910e3f66cde3b11e4ba  9200db04a4c8613abca983207ac04c8bffea2e
+..  28589c6d9805eb71d0097d5009abe459071add  96d2c95624a5918b2972f45d2575974eedfd19
+
+./.git/objects/b0:
+.  ..  8ca865a1b8c0a11d4739e8a1da26f3d9733f5d  c1dc8d15a960bc37a7876b013184894e24ecc1
+
+./.git/objects/b1:
+.					bccf8908a846969bf58de2ac080ae07d723bbb
+..					cc4bfa46d5baaafe32587e8a3923eb10b9a379
+03844d3d8c17541287de484d0f473c73273f3e	e9ba315add772d7117e1e62da0459ee25eaa76
+0a3da891b3a53afb450a0dd9c18b1d6625a4e3
+
+./.git/objects/b2:
+.  ..  2caa3192da9fff3a52e53cb2f8b8c40f370b06  98603ad45f3a6a3c825d2b6bf05c0a92f43647
+
+./.git/objects/b3:
+.   87e8d6a865182266dfaa47b17370ef743d2877  a81a87b3c3869eee2ff2cb6dea25953f5a793f
+..  a198fb288d87af7169a7e368d86f9c3ed0cece  d4fe6f399d27c44c65d7c7bb2cc17be5ddf9b7
+
+./.git/objects/b4:
+.   237f0717862b2fa398bdb118ea54c917f8521a  a62f2a34fecd73fe8b2ddedb0abea3fa60c4b9
+..  30f13ebbfd2d074ad0a4e6adb783fb3e5c42ed
+
+./.git/objects/b5:
+.					b1439e4cffc36585277775beb6f8402a4e064c
+..					e6b42adb008c3ace5fbbc6ec214bee6822878b
+1aef00dba26860c20477701a01e54d5ff437f6	f27b1e8e9e6031331eccb5207a3b23688ef58c
+a2d67ecf458b63206d070f75b53fd0a824f9d1
+
+./.git/objects/b6:
+.					93cf3484b3d15bff8cc70ea208a393958c7055
+..					b96cf2d1b73fe51413ae0822f325b2f10ab8bc
+6974c5a29c6971e300fe0655c71b3c003f6314	d705a637253bb3a8bc593dd9e4dda11dc5f39f
+6e3f64ebd098c1d8d1fb58982526446ef54318	e7fb06abb0be81a316b5241c91c616c02568b8
+
+./.git/objects/b7:
+.  ..  1c66e81b3311c45e3b61165fb832c7c52d07af  c1000f573a588b8033f2709955d5b8a1cb8777
+
+./.git/objects/b8:
+
+~/github/rshell
+kryne001@well $ cd tests
+~/github/rshell/tests
+kryne001@well $ ls 
+[0m[0mexec.script[0m  [0mhomework4.sh[0m  [0mhw3.sh[0m  [0mls.sh[0m
+[m~/github/rshell/tests
+kryne001@well $ rm -rf homework4.sh
+~/github/rshell/tests
+kryne001@well $ script home[K[K[K4.sh
+Script started, file is h4.sh
+~
+kryne001@well $ cd github/rshell/
+~/github/rshell
+kryne001@well $ ls
+[0m[01;34mbin[0m/  [0mhomework.sh[0m  [0mLICENSE[0m  [0mmakefile[0m  [0mREADME.md[0m  [01;34msrc[0m/  [01;34mtests[0m/
+[m~/github/rshell
+kryne001@well $ make rshell
+g++ -Wall -Werror -ansi -pedantic -g --debug src/hw1.cpp -o bin/rshell
+~/github/rshell
+kryne001@well $ bin/rshell
+kryne001@well.cs.ucr.edu$ ls > test #io redirection
+kryne001@well.cs.ucr.edu$ cat test # #check contents
+bin
+homework.sh
+LICENSE
+makefile
+README.md
+src
+test
+tests
+kryne001@well.cs.ucr.edu$ rm -rf test #test if rm works, whichs    is not in the ibn     bin folder
+kryne001@well.cs.ucr.edu$ ls #se  test is   f the test file is still in working folder
+bin  homework.sh  LICENSE  makefile  README.md	src  tests
+kryne001@well.cs.ucr.edu$ ls  cd .. #if it uses my cd, it should f print out used mine
+used mine
+kryne001@well.cs.ucr.edu$ ls    pw  ls #chekc  ck if it worked
+rshell	ucr-cs100
+kryne001@well.cs.ucr.edu$ cd ucr-cs100
+used mine
+kryne001@well.cs.ucr.edu$ makr sh    e s rshell #can it make the file in     ?
+make: *** No rule to make target `rshell'.  Stop.
+kryne001@well.cs.ucr.edu$ ls
+assignments  GRADES.md	lecture  LICENSE  README.md  scripts  studentinfo  studyguide.md
+kryne001@well.cs.ucr.edu$ cd .. #ho  wo hoops wrong w folder
+used mine
+kryne001@well.cs.ucr.edu$ ls
+rshell	ucr-cs100
+kryne001@well.cs.ucr.edu$ cd rshell
+used mine
+kryne001@well.cs.ucr.edu$ ls
+bin  homework.sh  LICENSE  makefile  README.md	src  tests
+kryne001@well.cs.ucr.edu$ maek    ke rshell #can it make the file?
+g++ -Wall -Werror -ansi -pedantic -g --debug src/hw1.cpp -o bin/rshell
+kryne001@well.cs.ucr.edu$ # it works!
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  vector::_M_range_check
+kryne001@well.cs.ucr.edu$ exit
+~/github/rshell
+kryne001@well $ stop c[Kscript
+bash: stop: command not found
+~/github/rshell
+kryne001@well $ ls
+[0m[01;34mbin[0m/  [0mhomework.sh[0m  [0mLICENSE[0m  [0mmakefile[0m  [0mREADME.md[0m  [01;34msrc[0m/  [01;34mtests[0m/
+[m~/github/rshell
+kryne001@well $ cat [K[K[K[Kls [K[K[Kcd tests
+~/github/rshell/tests
+kryne001@well $ cat h4.sh
+~/github/rshell/tests
+kryne001@well $ vim h4.sh
+7[?47h[?1h=[1;56r[m[H[2J[56;1H"h4.sh" "h4.sh" 0L, 0C[>c[1;1H[33m  1 [m
+[1m[34m~                                                                                                    [3;1H~                                                                                                    [4;1H~                                                                                                    [5;1H~                                                                                                    [6;1H~                                                                                                    [7;1H~                                                                                                    [8;1H~                                                                                                    [9;1H~                                                                                                    [10;1H~                                                                                                    [11;1H~                                                                                                    [12;1H~                                                                                                    [13;1H~                                                                                                    [14;1H~                                                                                                    [15;1H~                                                                                                    [16;1H~                                                                                                    [17;1H~                                                                                                    [18;1H~                                                                                                    [19;1H~                                                                                                    [20;1H~                                                                                                    [21;1H~                                                                                                    [22;1H~                                                                                                    [23;1H~                                                                                                    [24;1H~                                                                                                    [25;1H~                                                                                                    [26;1H~                                                                                                    [27;1H~                                                                                                    [28;1H~                                                                                                    [29;1H~                                                                                                    [30;1H~                                                                                                    [31;1H~                                                                                                    [32;1H~                                                                                                    [33;1H~                                                                                                    [34;1H~                                                                                                    [35;1H~                                                                                                    [36;1H~                                                                                                    [37;1H~                                                                                                    [38;1H~                                                                                                    [39;1H~                                                                                                    [40;1H~                                                                                                    [41;1H~                                                                                                    [42;1H~                                                                                                    [43;1H~                                                                                                    [44;1H~                                                                                                    [45;1H~                                                                                                    [46;1H~                                                                                                    [47;1H~                                                                                                    [48;1H~                                                                                                    [49;1H~                                                                                                    [50;1H~                                                                                                    [51;1H~                                                                                                    [52;1H~                                                                                                    [53;1H~                                                                                                    [54;1H~                                                                                                    [55;1H~                                                                                                    [m[56;84H0,0-1         All[1;5H[56;1H[K[56;1H:w:wq:wq:w[56;3H[K[56;1H:w:[56;2H[K[56;1H:q:q!:q!:q[56;3H[K[56;1H:q:[56;2H[K[56;1H:w:wq:wq"h4.sh" "h4.sh" 0L, 0C written
+[?1l>[2J[?47l8~/github/rshell/tests
+kryne001@well $ end
+bash: end: command not found
+~/github/rshell/tests
+kryne001@well $ q
+bash: q: command not found
+~/github/rshell/tests
+kryne001@well $ stop!
+bash: stop!: command not found
+~/github/rshell/tests
+kryne001@well $ exit
+exit
+Script done, file is h4.sh
+~/github/rshell/tests
+kryne001@well $ cat hw[K4.sh
+~/github/rshell/tests
+kryne001@well $ ls
+[0m[0mexec.script[0m  [0mh4.sh[0m  [0mhw3.sh[0m  [0mls.sh[0m
+[m~/github/rshell/tests
+kryne001@well $ vim hw[K[Kh4.sh
+7[?47h[?1h=[1;56r[m[H[2J[56;1H"h4.sh" "h4.sh" 0L, 0C[>c[1;1H[33m  1 [m
+[1m[34m~                                                                                                    [3;1H~                                                                                                    [4;1H~                                                                                                    [5;1H~                                                                                                    [6;1H~                                                                                                    [7;1H~                                                                                                    [8;1H~                                                                                                    [9;1H~                                                                                                    [10;1H~                                                                                                    [11;1H~                                                                                                    [12;1H~                                                                                                    [13;1H~                                                                                                    [14;1H~                                                                                                    [15;1H~                                                                                                    [16;1H~                                                                                                    [17;1H~                                                                                                    [18;1H~                                                                                                    [19;1H~                                                                                                    [20;1H~                                                                                                    [21;1H~                                                                                                    [22;1H~                                                                                                    [23;1H~                                                                                                    [24;1H~                                                                                                    [25;1H~                                                                                                    [26;1H~                                                                                                    [27;1H~                                                                                                    [28;1H~                                                                                                    [29;1H~                                                                                                    [30;1H~                                                                                                    [31;1H~                                                                                                    [32;1H~                                                                                                    [33;1H~                                                                                                    [34;1H~                                                                                                    [35;1H~                                                                                                    [36;1H~                                                                                                    [37;1H~                                                                                                    [38;1H~                                                                                                    [39;1H~                                                                                                    [40;1H~                                                                                                    [41;1H~                                                                                                    [42;1H~                                                                                                    [43;1H~                                                                                                    [44;1H~                                                                                                    [45;1H~                                                                                                    [46;1H~                                                                                                    [47;1H~                                                                                                    [48;1H~                                                                                                    [49;1H~                                                                                                    [50;1H~                                                                                                    [51;1H~                                                                                                    [52;1H~                                                                                                    [53;1H~                                                                                                    [54;1H~                                                                                                    [55;1H~                                                                                                    [m[56;84H0,0-1         All[1;5H[56;1H[K[56;1H:w:wq:wq:w[56;3H[K[56;1H:w:[56;2H[K[56;1H:q:q!:q![56;1H[K[56;1H[?1l>[2J[?47l8~/github/rshell/tests
+kryne001@well $ ls
+[0m[0mexec.script[0m  [0mh4.sh[0m  [0mhw3.sh[0m  [0mls.sh[0m
+[m~/github/rshell/tests
+kryne001@well $ cd ..
+~/github/rshell
+kryne001@well $ ls
+[0m[01;34mbin[0m/  [0mhomework.sh[0m  [0mLICENSE[0m  [0mmakefile[0m  [0mREADME.md[0m  [01;34msrc[0m/  [01;34mtests[0m/
+[m~/github/rshell
+kryne001@well $ scrip[K[K[K[K[Kcd tests
+~/github/rshell/tests
+kryne001@well $ script h4.sh
+Script started, file is h4.sh
+~
+kryne001@well $ exit
+exit
+Script done, file is h4.sh
+~/github/rshell/tests
+kryne001@well $ rm -rf h4.sh
+~/github/rshell/tests
+kryne001@well $ ls
+[0m[0mexec.script[0m  [0mhw3.sh[0m  [0mls.sh[0m
+[m~/github/rshell/tests
+kryne001@well $ script h4.sh
+Script started, file is h4.sh
+~
+kryne001@well $ cd github/rshell/
+~/github/rshell
+kryne001@well $ make sr[K[Krshell
+g++ -Wall -Werror -ansi -pedantic -g --debug src/hw1.cpp -o bin/rshell
+~/github/rshell
+kryne001@well $ binr[K/rshell
+kryne001@well.cs.ucr.edu$ ls > test # io st  redirection
+kryne001@well.cs.ucr.edu$ cat test #view contents
+bin
+homework.sh
+LICENSE
+makefile
+README.md
+src
+test
+tests
+kryne001@well.cs.ucr.edu$ rm -rf test #u rm is not in the bin folder, testing if path ow  works
+kryne001@well.cs.ucr.edu$ ls l s # test if rm worked      executed
+bin  homework.sh  LICENSE  makefile  README.md	src  tests
+kryne001@well.cs.ucr.edu$ cd .. # chec    if it uses my cd, should print m used mine
+used mine
+kryne001@well.cs.ucr.edu$ c ls # check the contents of current directio  ory
+rshell	ucr-cs100
+kryne001@well.cs.ucr.edu$ ls
+rshell	ucr-cs100
+kryne001@well.cs.ucr.edu$ cd rshell
+used mine
+kryne001@well.cs.ucr.edu$ ls  ls
+bin  homework.sh  LICENSE  makefile  README.md	src  tests
+kryne001@well.cs.ucr.edu$ ls -laksdj          exit
+~/github/rshell
+kryne001@well $ exit
+exit
+Script done, file is h4.sh
+~/github/rshell/tests
+kryne001@well $ ls
+[0m[0mexec.script[0m  [0mh4.sh[0m  [0mhw3.sh[0m  [0mls.sh[0m
+[m~/github/rshell/tests
+kryne001@well $ cat h4.sh
+Script started on Tue 26 Aug 2014 02:08:04 PM PDT
+~
+kryne001@well $ cd github/rshell/
+~/github/rshell
+kryne001@well $ make sr[K[Krshell
+g++ -Wall -Werror -ansi -pedantic -g --debug src/hw1.cpp -o bin/rshell
+~/github/rshell
+kryne001@well $ binr[K/rshell
+kryne001@well.cs.ucr.edu$ ls > test # io st  redirection
+kryne001@well.cs.ucr.edu$ cat test #view contents
+bin
+homework.sh
+LICENSE
+makefile
+README.md
+src
+test
+tests
+kryne001@well.cs.ucr.edu$ rm -rf test #u rm is not in the bin folder, testing if path ow  works
+kryne001@well.cs.ucr.edu$ ls l s # test if rm worked      executed
+bin  homework.sh  LICENSE  makefile  README.md	src  tests
+kryne001@well.cs.ucr.edu$ cd .. # chec    if it uses my cd, should print m used mine
+used mine
+kryne001@well.cs.ucr.edu$ c ls # check the contents of current directio  ory
+rshell	ucr-cs100
+kryne001@well.cs.ucr.edu$ ls
+rshell	ucr-cs100
+kryne001@well.cs.ucr.edu$ cd rshell
+used mine
+kryne001@well.cs.ucr.edu$ ls  ls
+bin  homework.sh  LICENSE  makefile  README.md	src  tests
+kryne001@well.cs.ucr.edu$ ls -laksdj          exit
+~/github/rshell
+kryne001@well $ exit
+exit
+
+Script done on Tue 26 Aug 2014 02:09:59 PM PDT
+~/github/rshell/tests
+kryne001@well $ ls
+[0m[0mexec.script[0m  [0mh4.sh[0m  [0mhw3.sh[0m  [0mls.sh[0m
+[m~/github/rshell/tests
+kryne001@well $ vim h4.sh
+7[?47h[?1h=[1;56r[m[H[2J[56;1H"h4.sh" "h4.sh" 37L, 1262C[>c[1;1H[33m  1 [mScript started on Tue [31m26[m Aug [31m2014[m [31m02[m:[31m08[m:[31m04[m PM PDT
+[33m  2 [m~[34m^M^M[m
+[33m  3 [mkryne001@well $ [33mcd[m github/rshell/[34m^M[m
+[33m  4 [m~/github/rshell[34m^M^M[m
+[33m  5 [mkryne001@well $ make sr[34m^H^[[m[33m[[mK[34m^H^[[m[33m[[mKrshell[34m^M[m
+[33m  6 [mg++ -Wall -Werror -ansi -pedantic [33m-g[m --debug src/hw1.cpp [33m-o[m bin/rshell[34m^M[m
+[33m  7 [m~/github/rshell[34m^M^M[m
+[33m  8 [mkryne001@well $ binr[34m^H^[[m[33m[[mK/rshell[34m^M[m
+[33m  9 [mkryne001@well.cs.ucr.edu$ ls [33m>[m [33mtest[m # io st[34m^H[m [34m^H^H[m [34m^H[mredirection[34m^M[m
+[33m 10 [mkryne001@well.cs.ucr.edu$ cat [33mtest[m #view contents[34m^M[m
+[33m 11 [mbin[34m^M[m
+[33m 12 [mhomework.sh[34m^M[m
+[33m 13 [mLICENSE[34m^M[m
+[33m 14 [mmakefile[34m^M[m
+[33m 15 [mREADME.md[34m^M[m
+[33m 16 [msrc[34m^M[m
+[33m 17 test[m[34m^M[m
+[33m 18 [mtests[34m^M[m
+[33m 19 [mkryne001@well.cs.ucr.edu$ rm -rf [33mtest[m #u[34m^H[m [34m^H[mrm is not in the bin folder, testing if path ow[34m^H[m [34m^HH[m[20;1H[33m    [m[34m^H[m [34m^H[mworks[34m^M[m
+[33m 20 [mkryne001@well.cs.ucr.edu$ ls[34m^H[m [34m^H[ml[34m^H[m [34m^H[ms[34m # test if rm worked^H ^H^H ^H^H ^H^H ^H^H ^H^H ^Hexecutee[m[22;1H[33m    [m[34md^M[m
+[33m 21 [mbin  homework.sh  LICENSE  makefile  README.md  src  tests[34m^M[m
+[33m 22 [mkryne001@well.cs.ucr.edu$ cd ..[34m # chec^H ^H^H ^H^H ^H^H ^Hif it uses my cd, should print m^H ^Huss[m[25;1H[33m    [m[34med mine^M[m
+[33m 23 [mused mine[34m^M[m
+[33m 24 [mkryne001@well.cs.ucr.edu$ c[34m^H[m [34m^H[mls[34m # check the contents of current directio^H ^H^H ^Hory^M[m
+[33m 25 [mrshell   ucr-cs100[34m^M[m
+[33m 26 [mkryne001@well.cs.ucr.edu$ ls[34m^M[m
+[33m 27 [mrshell   ucr-cs100[34m^M[m
+[33m 28 [mkryne001@well.cs.ucr.edu$ cd rshell[34m^M[m
+[33m 29 [mused mine[34m^M[m
+[33m 30 [mkryne001@well.cs.ucr.edu$ ls[34m^H[m [34m^H^H[m [34m^H[mls[34m^M[m
+[33m 31 [mbin  homework.sh  LICENSE  makefile  README.md  src  tests[34m^M[m
+[33m 32 [mkryne001@well.cs.ucr.edu$ ls -laksdj[34m^H[m [34m^H^H[m [34m^H^H[m [34m^H^H[m [34m^H^H[m [34m^H^H[m [34m^H^H[m [34m^H^H[m [34m^H^H[m [34m^H^H[m [34m^H[mexit[34m^M[m
+[33m 33 [m~/github/rshell[34m^M^M[m
+[33m 34 [mkryne001@well $ exit[34m^M[m
+[33m 35 [mexit[34m^M[m
+[33m 36 
+ 37 [mScript done on Tue [31m26[m Aug [31m2014[m [31m02[m:[31m09[m:[31m59[m PM PDT
+[1m[34m~                                                                                                    [42;1H~                                                                                                    [43;1H~                                                                                                    [44;1H~                                                                                                    [45;1H~                                                                                                    [46;1H~                                                                                                    [47;1H~                                                                                                    [48;1H~                                                                                                    [49;1H~                                                                                                    [50;1H~                                                                                                    [51;1H~                                                                                                    [52;1H~                                                                                                    [53;1H~                                                                                                    [54;1H~                                                                                                    [55;1H~                                                                                                    [m[56;84H1,1           All[1;5H[56;1H[K[56;1H:w:w:[56;2H[K[56;1H:q:q:[56;2H[K[56;1H:w:wq:wq"h4.sh" "h4.sh" 37L, 1262C written
+[?1l>[2J[?47l8~/github/rshell/tests
+kryne001@well $ ls
+[0m[0mexec.script[0m  [0mh4.sh[0m  [0mhw3.sh[0m  [0mls.sh[0m
+[m~/github/rshell/tests
+kryne001@well $ git add h4.sh
+The following paths are ignored by one of your .gitignore files:
+tests
+Use -f if you really want to add them.
+fatal: no files added
+~/github/rshell/tests
+kryne001@well $ cd ..
+~/github/rshell
+kryne001@well $ ls
+[0m[01;34mbin[0m/  [0mhomework.sh[0m  [0mLICENSE[0m  [0mmakefile[0m  [0mREADME.md[0m  [01;34msrc[0m/  [01;34mtests[0m/
+[m~/github/rshell
+kryne001@well $ cd bin
+~/github/rshell/bin
+kryne001@well $ ls
+[0m[01;32mrshell[0m*
+[m~/github/rshell/bin
+kryne001@well $ rm -rf rshell
+~/github/rshell/bin
+kryne001@well $ ls
+[0m[m~/github/rshell/bin
+kryne001@well $ cd ..
+~/github/rshell
+kryne001@well $ ls
+[0m[01;34mbin[0m/  [0mhomework.sh[0m  [0mLICENSE[0m  [0mmakefile[0m  [0mREADME.md[0m  [01;34msrc[0m/  [01;34mtests[0m/
+[m~/github/rshell
+kryne001@well $ cd[K[Km[Krm -rf homework.sh
+~/github/rshell
+kryne001@well $ ls
+[0m[01;34mbin[0m/  [0mLICENSE[0m  [0mmakefile[0m  [0mREADME.md[0m  [01;34msrc[0m/  [01;34mtests[0m/
+[m~/github/rshell
+kryne001@well $ cd src
+~/github/rshell/src
+kryne001@well $ ls
+[0m[0mhw1.cpp[0m  [0mls.cpp[0m
+[m~/github/rshell/src
+kryne001@well $ cd ..
+~/github/rshell
+kryne001@well $ ls tests
+[0m[0mexec.script[0m  [0mh4.sh[0m  [0mhw3.sh[0m  [0mls.sh[0m
+[m~/github/rshell
+kryne001@well $ cd ..[K[K[K[K[Kgit add 0f[K[K-f - A[K[KA homework[K[K[K[K[K[K[K[K
+~/github/rshell
+kryne001@well $ git commit -m "final product"
+[homework5 7b92087] final product
+ Committer: Kyler Rynear <kryne001@well.cs.ucr.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --glob
