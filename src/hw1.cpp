@@ -18,7 +18,8 @@ void changeDirectory(string input) {
 }
 
 void sigInt(int sig) { 
-	cout << "eC";
+
+	flush(cout);
 }
 
 void sigStop(int sig) {
@@ -33,9 +34,9 @@ int main() {
 	string commandLine;
 	while (1){
 	
-	/*	if (SIG_ERR == signal(SIGINT, sigInt)) 
+		if (SIG_ERR == signal(SIGINT, sigInt)) 
 			perror("signal for sigInt failed");
-		if (SIG_ERR == signal(SIGTSTP, sigStop))
+		/*if (SIG_ERR == signal(SIGTSTP, sigStop))
 			perror("signal for sigtstp failed");*/
 		char host[128];
 		if (-1 == (gethostname(host, sizeof host))) {
