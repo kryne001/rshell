@@ -5,7 +5,7 @@ In this assignment, I attempted to make a simple command shell comprising of all
 
 The way the program works is the user is prompted a line that consists of the users login info, their host name, and the '$' symbol, which is immediately followed by the area for user input. The user then enters the command, and the command is executed and printed to the terminal. The process is intended to continue as such until the user inputs 'exit', which then causes the program to exit.
 
-For example, if the user enters 'ls', the program will print to the terminal all the contents in the current directory. If the user then enters 'ls -a', the program will print to the terminal all the contents in the current directory and also execute the '-a' flag, which includes the contents in the directory that starts with a '.'. 
+For example, if the user enters 'ls', the program will print to the terminal all the contents in the current directory. If the user then enters 'ls -a', the program will print all the hidden files and nothing else.
 
 Assignment 2: ls
 ======
