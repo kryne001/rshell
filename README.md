@@ -1,3 +1,10 @@
+Tutorial series 
+======
+
+My Partner and I created a tutorial series centered around vim and github for this class. It goes over the basics of vim and github to serve as a starting point for beginners.
+
+https://izbicki.me/blog/videoguide-for-github-vim-bash.html
+
 Assignment 1: rshell
 ======
 
@@ -36,3 +43,5 @@ Assignment 2:
 
 -R will only go into one folder then stop. When running -l, all files will have 'l' for symbolically linked file. 
 the program will only work for contents in directories accessible in the current directory and the current directory
+
+
